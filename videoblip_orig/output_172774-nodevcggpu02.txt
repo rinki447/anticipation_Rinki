@@ -1,4 +1,0 @@
-/var/spool/slurmd/job172774/slurm_script: line 42: 1 * : syntax error: operand expected (error token is "* ")
-MASTER_NODE=12774
-WORLD_SIZE=
-MASTER_ADDR=nodevcggpu02
