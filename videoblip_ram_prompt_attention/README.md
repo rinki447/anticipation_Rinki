@@ -3,6 +3,7 @@
 > Save EGo4D clips in "folder_clips" 
 
 > Save Ram-Tags in "folder_tags" from https://drive.google.com/file/d/1bPdlewf9ICRHOuW3qK14BdUZgPuDGWMi/view?usp=sharing
+(same folder Anirudh shared with you before)
 
 > Save Annotations under "your_annot_folder" from https://drive.google.com/drive/folders/1G2_Ow6TjgCoBgevBtUNKWdPDzLM6R9Jx?usp=sharing
 
