@@ -1,17 +1,17 @@
 **For Shao Yuan: At least 3 GPU required
 
-Save EGo4D clips in "folder_clips" 
+> Save EGo4D clips in "folder_clips" 
 
-Save Ram-Tags in "folder_tags" from https://drive.google.com/file/d/1bPdlewf9ICRHOuW3qK14BdUZgPuDGWMi/view?usp=sharing
+> Save Ram-Tags in "folder_tags" from https://drive.google.com/file/d/1bPdlewf9ICRHOuW3qK14BdUZgPuDGWMi/view?usp=sharing
 
-Save Annotations under "your_annot_folder" from https://drive.google.com/drive/folders/1G2_Ow6TjgCoBgevBtUNKWdPDzLM6R9Jx?usp=sharing
+> Save Annotations under "your_annot_folder" from https://drive.google.com/drive/folders/1G2_Ow6TjgCoBgevBtUNKWdPDzLM6R9Jx?usp=sharing
 
-> eg: for me the folder path is "/data/AmitRoyChowdhury/ego4d_data/v2/annotations/"
-
-
+>>  eg: for me the folder path is "/data/AmitRoyChowdhury/ego4d_data/v2/annotations/"
 
 
-Inside slurm/train_videoblip_rinki.sh, replace the paths:
+
+
+> Inside slurm/train_videoblip_rinki.sh, replace the paths:
 
 1> line 31, RAM_TAGS_PATH="folder_name" with your "folder_tags"
 
@@ -32,7 +32,7 @@ forecast_annot_tr_dir="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipa
 forecast_annot_te_dir="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipation_final_test_annots.json" =  your_annots_folder path +"anticipation_final_test_annots.json"
 
 
-To run the code I used:
+> To run the code I used:
 sbatch -p vcggpu --gres=gpu:4 --mem=30g --time=07-00:01:00 slurm_scripts/train_videoblip_rinki.sh
 
 
