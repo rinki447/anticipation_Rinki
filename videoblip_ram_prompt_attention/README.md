@@ -31,6 +31,9 @@ forecast_annot_tr_dir="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipa
 
 forecast_annot_te_dir="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipation_final_test_annots.json" =  your_annots_folder path +"anticipation_final_test_annots.json"
 
+6> line 32: SAVE_DIR="" , change the path to your chosen path, to save results
+
+7> line 38: OUT_Dir="" , change this path to your chosen folder, to save checkpoints of the model
 
 > To run the code I used:
 sbatch -p vcggpu --gres=gpu:4 --mem=30g --time=07-00:01:00 slurm_scripts/train_videoblip_rinki.sh
