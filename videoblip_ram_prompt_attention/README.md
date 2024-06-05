@@ -67,17 +67,4 @@ python -m ego4d.cli.cli \
     --version v2
 ```
 
-3. Extracting the RAM_tags from [link](https://drive.google.com/file/d/1bPdlewf9ICRHOuW3qK14BdUZgPuDGWMi/view?usp=sharing)
 
-# Training the model
-
-Update the correct paths to the Ego4D clips, annotations and other files in the `slurm_scripts/train_videoblip.sh`.
-```
-bash slurm_scripts/train_videoblip.sh
-```
-
-# Computing the accuracy
-
-```
-bash slurm_scripts/compute_videoblip_acc.sh
-```
