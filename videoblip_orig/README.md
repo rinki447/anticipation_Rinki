@@ -38,17 +38,5 @@ To run the code I used: sbatch -p vcggpu --gres=gpu:4 --mem=30g --time=07-00:01:
   <figcaption>Original VideoBLIP model</figcaption>
 </figure>
 ########################################################################################################################################################################################
-# Setup
 
-1. Install the requirements for running the code
-
-2. Download the Ego4D clips and annotations following https://github.com/facebookresearch/Ego4d/blob/main/ego4d/cli/README.md:
-
-```
-python -m ego4d.cli.cli \
-    --output_directory=${EGO4D_DIR} \
-    --datasets annotations clips lta_models \
-    --benchmarks FHO
-    --version v2
-```
 
