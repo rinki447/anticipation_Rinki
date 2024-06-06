@@ -31,12 +31,9 @@ forecast_annot_te_dir="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipa
 
 >> To run the code I used: sbatch -p vcggpu --gres=gpu:4 --mem=30g --time=07-00:01:00 slurm_scripts/train_videoblip.sh
 
-# Architecture
+![orig](https://github.com/rinki447/anticipation_Rinki/assets/132046732/f93e2d74-1f91-4b95-9e2e-1d5732e8f705)
 
-<figure>
-  <img src="Plots/Video_BLIP_original_idea.png">
-  <figcaption>Original VideoBLIP model</figcaption>
-</figure>
+
 ########################################################################################################################################################################################
 
 
