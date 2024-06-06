@@ -44,31 +44,8 @@ sbatch -p vcggpu --gres=gpu:4 --mem=30g --time=07-00:01:00 slurm_scripts/train_v
 
 
 
+![ram_caption_fusion](https://github.com/rinki447/anticipation_Rinki/assets/132046732/9eaf1ac8-1f77-4023-a248-39858b977006)
 
-![anticipation](https://github.com/Anirudh257/cluster_backup/assets/132046732/04748d62-93ff-4744-82a3-3a8c9d17e911)
-# Architecture
 
-<figure>
-  <img src="Plots/VideoBLIP_RAM_Prompt_Attention.png">
-  <figcaption>VideoBLIP with fused textual and vision features.</figcaption>
-</figure>
-
-# Setup
-
-1. Install the requirements for running the code
-
-```
-conda env create -f blip_ram.yml
-```
-
-2. Download the Ego4D clips and annotations following https://github.com/facebookresearch/Ego4d/blob/main/ego4d/cli/README.md:
-
-```
-python -m ego4d.cli.cli \
-    --output_directory=${EGO4D_DIR} \
-    --datasets annotations clips lta_models \
-    --benchmarks FHO
-    --version v2
-```
 
 
