@@ -1,0 +1,80 @@
+/var/spool/slurmd/job172818/slurm_script: line 42: 1 * : syntax error: operand expected (error token is "* ")
+MASTER_NODE=12818
+WORLD_SIZE=
+MASTER_ADDR=nodevcggpu03
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_functional_video.py:6: UserWarning: The 'torchvision.transforms._functional_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms.functional' module instead.
+  warnings.warn(
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_transforms_video.py:22: UserWarning: The 'torchvision.transforms._transforms_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms' module instead.
+  warnings.warn(
+[2024-06-05 18:40:15,676] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+wandb: Currently logged in as: rghos014 (rghos014ucr). Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.17.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.6
+wandb: Run data is saved locally in /home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/wandb/run-20240605_184017-996f4o60
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run smart-night-6
+wandb: ⭐️ View project at https://wandb.ai/rghos014ucr/VideoBLIP_Original
+wandb: 🚀 View run at https://wandb.ai/rghos014ucr/VideoBLIP_Original/runs/996f4o60
+Length of training dataset:37947
+Length of validation dataset:19348
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.21s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.34s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.47s/it]
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+Total number of trainable parameters:107130880
+  0%|          | 0/2965 [00:00<?, ?it/s]/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_functional_video.py:6: UserWarning: The 'torchvision.transforms._functional_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms.functional' module instead.
+  warnings.warn(
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_transforms_video.py:22: UserWarning: The 'torchvision.transforms._transforms_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms' module instead.
+  warnings.warn(
+[2024-06-05 18:40:43,297] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_functional_video.py:6: UserWarning: The 'torchvision.transforms._functional_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms.functional' module instead.
+  warnings.warn(
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_transforms_video.py:22: UserWarning: The 'torchvision.transforms._transforms_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms' module instead.
+  warnings.warn(
+[2024-06-05 18:40:50,881] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_functional_video.py:6: UserWarning: The 'torchvision.transforms._functional_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms.functional' module instead.
+  warnings.warn(
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_transforms_video.py:22: UserWarning: The 'torchvision.transforms._transforms_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms' module instead.
+  warnings.warn(
+[2024-06-05 18:40:58,447] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_functional_video.py:6: UserWarning: The 'torchvision.transforms._functional_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms.functional' module instead.
+  warnings.warn(
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_transforms_video.py:22: UserWarning: The 'torchvision.transforms._transforms_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms' module instead.
+  warnings.warn(
+[2024-06-05 18:41:06,546] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_functional_video.py:6: UserWarning: The 'torchvision.transforms._functional_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms.functional' module instead.
+  warnings.warn(
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_transforms_video.py:22: UserWarning: The 'torchvision.transforms._transforms_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms' module instead.
+  warnings.warn(
+[2024-06-05 18:41:15,427] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_functional_video.py:6: UserWarning: The 'torchvision.transforms._functional_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms.functional' module instead.
+  warnings.warn(
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_transforms_video.py:22: UserWarning: The 'torchvision.transforms._transforms_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms' module instead.
+  warnings.warn(
+[2024-06-05 18:41:23,987] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_functional_video.py:6: UserWarning: The 'torchvision.transforms._functional_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms.functional' module instead.
+  warnings.warn(
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_transforms_video.py:22: UserWarning: The 'torchvision.transforms._transforms_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms' module instead.
+  warnings.warn(
+[2024-06-05 18:41:32,486] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_functional_video.py:6: UserWarning: The 'torchvision.transforms._functional_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms.functional' module instead.
+  warnings.warn(
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_transforms_video.py:22: UserWarning: The 'torchvision.transforms._transforms_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms' module instead.
+  warnings.warn(
+[2024-06-05 18:41:40,871] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/dataset.py:129: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/dataset.py:129: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/dataset.py:129: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/dataset.py:129: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/dataset.py:129: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/dataset.py:129: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/dataset.py:129: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/dataset.py:129: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()

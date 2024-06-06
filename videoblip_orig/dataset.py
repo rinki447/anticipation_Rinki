@@ -20,6 +20,11 @@ from utils import (
     generate_input_ids_and_labels_from_interleaved,
     clean_narration_text
 )
+from transformers import BatchFeature
+from sentence_transformers import (
+    SentenceTransformer, 
+    util
+)
 # Based on prompts from InstructBLIP
 # Modified for image
 PROMPTS = [
@@ -48,7 +53,7 @@ class SegFileDataset(Dataset):
         
         with open(annots_path, "r") as f:
             self.annots = json.load(f)
-        self.annots=self.annots[:34]
+        #self.annots=self.annots[:34]
         
         self.processor=processor 
         self.num_query_tokens = num_query_tokens
@@ -56,33 +61,14 @@ class SegFileDataset(Dataset):
         self.sample_for_test = sample_for_test
         
 
-    def extract_frames(self, clip_path, frame_ids):
-        """Given the seg_file, extract the frame-level features
-
-           Args:
-            seg_file (str): Ego4D seg_file of the format clip_id_start_frame_XX_end_frame_YY
-
-           Returns:
-            inputs (dict): preprocessed subset of frames from the video between the 
-                start_frame=XX and end_frame=YY. 
-        """
-        
-        # (num_frames, H,W,C)
-        # eg. (4, 1080, 1440, 3)
-        pil_frames = extract_frames_from_video(clip_path,frame_ids)
-
-        # Preprocess frames
-        # dict['pixel_values': (num_frames, C, H, W): (4, 3, 224, 224)]
-        inputs = self.processor(pil_frames, return_tensors='pt') ##############
-                
-        return inputs  
+    
 
     def __len__(self):
         return len(self.annots)   
 
    
             
-    def extract_frames(self, seg_file, num_segments,start_frame,end_frame):
+    def extract_frames(self, clip_path,num_segments,start_frame,end_frame):
         """Given the seg_file, extract the frame-level features
 
            Args:
@@ -92,7 +78,7 @@ class SegFileDataset(Dataset):
             inputs (dict): preprocessed subset of frames from the video between the 
                 start_frame=XX and end_frame=YY. 
         """
-        vid_path = seg_file.split("_st")[0] + ".mp4"
+        #vid_path = seg_file.split("_st")[0] + ".mp4"
 
         #start_frame, end_frame = get_seg_start_end_frame(seg_file)
 
@@ -100,7 +86,7 @@ class SegFileDataset(Dataset):
 
         # (num_frames, H, C, W)
         # eg. (4, 1080, 1440, 3)
-        pil_frames = extract_frames_from_video(vid_path,frame_ids)
+        pil_frames = extract_frames_from_video(clip_path,frame_ids)
 
         # 
 
@@ -135,7 +121,7 @@ class SegFileDataset(Dataset):
 
                 n_seg=8
                 
-                preproc_seg_frame = self.extract_frames(seg_name,n_seg,start_frame,end_frame)
+                preproc_seg_frame = self.extract_frames(clip_path,n_seg,start_frame,end_frame)
 
                 if isinstance(preproc_seg_frame, BatchFeature):
                         # Convert BatchFeature to a tensor

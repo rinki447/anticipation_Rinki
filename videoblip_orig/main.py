@@ -90,7 +90,7 @@ def main():
         vids_dir=vids_dir,
         processor=processor,
     )'''
-    train_dataset=SegFileDataset(forecast_annot_tr_dir,no_frame,processor,num_query_tokens=32,decoder_only_lm=True,sample_for_test=False) #clip_path is within forecast_annot_tr_dir
+    train_dataset=SegFileDataset(forecast_annot_tr_dir,processor,num_query_tokens=32,decoder_only_lm=True,sample_for_test=False) #clip_path is within forecast_annot_tr_dir
     print("Length of training dataset:{}".format(len(train_dataset)))
 
     
@@ -101,15 +101,15 @@ def main():
          processor=processor,
     )'''
 
-    val_dataset=SegFileDataset(forecast_annot_te_dir,no_frame,processor,num_query_tokens=32,decoder_only_lm=True,sample_for_test=False) #clip_path is within forecast_annot_te_dir
+    val_dataset=SegFileDataset(forecast_annot_te_dir,processor,num_query_tokens=32,decoder_only_lm=True,sample_for_test=False) #clip_path is within forecast_annot_te_dir
     print("Length of validation dataset:{}".format(len(val_dataset)))
     
 
-    rand_ind = random.randint(0, len(val_dataset))
+    '''rand_ind = random.randint(0, len(val_dataset))
     rand_sample = val_dataset.__getitem__(rand_ind)
 
     with open("rand_sample.pkl", "wb") as f:
-        pickle.dump(rand_sample, f, pickle.HIGHEST_PROTOCOL)
+        pickle.dump(rand_sample, f, pickle.HIGHEST_PROTOCOL)'''
 
     model = VideoBlipForConditionalGeneration.from_pretrained(
         model_args.model_name_or_path,

@@ -1,0 +1,269 @@
+{
+    "os": "Linux-3.10.0-1160.83.1.el7.x86_64-x86_64-with-glibc2.17",
+    "python": "3.10.14",
+    "heartbeatAt": "2024-06-06T01:40:17.483075",
+    "startedAt": "2024-06-06T01:40:17.043482",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--n_present_video",
+        "2",
+        "--n_future_video",
+        "20",
+        "--no_frame",
+        "8",
+        "--forecast_annot_tr_dir",
+        "/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipation_final_train_annots.json",
+        "--forecast_annot_te_dir",
+        "/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipation_final_test_annots.json",
+        "--vids_dir",
+        "/data/AmitRoyChowdhury/ego4d_data/v2/clips/",
+        "--model_name_or_path",
+        "Salesforce/blip2-opt-2.7b",
+        "--lta_annots_dir",
+        "/data/AmitRoyChowdhury/ego4d_data/v2/annotations/",
+        "--output_dir",
+        "/data/AmitRoyChowdhury/Rinki/videoblip_orig_output/",
+        "--save_dir",
+        "/data/AmitRoyChowdhury/Rinki/videoblip_orig_model/",
+        "--num_train_epochs",
+        "5",
+        "--warmup_steps",
+        "1000",
+        "--learning_rate",
+        "1e-5",
+        "--per_device_train_batch_size",
+        "16",
+        "--gradient_accumulation_steps",
+        "4",
+        "--ddp_find_unused_parameters",
+        "False",
+        "--per_device_eval_batch_size",
+        "16",
+        "--weight_decay",
+        "0.05",
+        "--dataloader_num_workers",
+        "8",
+        "--bf16",
+        "True",
+        "--evaluation_strategy",
+        "epoch",
+        "--eval_steps",
+        "200",
+        "--save_strategy",
+        "epoch",
+        "--save_steps",
+        "200",
+        "--save_total_limit",
+        "3",
+        "--logging_steps",
+        "10"
+    ],
+    "state": "running",
+    "program": "/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "anticipation_Rinki_final/videoblip_orig/main.py",
+    "git": {
+        "remote": "https://github.com/Anirudh257/cluster_backup.git",
+        "commit": "12ccf7df003b45638ad41c708d8bda3692dc59db"
+    },
+    "email": "rinki447@gmail.com",
+    "root": "/home/eegrad/rghosal/cluster_backup",
+    "host": "nodevcggpu03.cris.local",
+    "username": "rghosal",
+    "executable": "/home/eegrad/rghosal/anaconda3/envs/llava/bin/python3",
+    "cpu_count": 32,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 1975.0,
+        "min": 1500.0,
+        "max": 3200.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 3200.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 3200.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 3200.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 3200.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 3200.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 3200.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 3200.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 3200.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2300.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2300.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2300.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1500.0,
+            "min": 1500.0,
+            "max": 3200.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 399.8046875,
+            "used": 10.561588287353516
+        }
+    },
+    "gpu": "NVIDIA RTX A5000",
+    "gpu_count": 3,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA RTX A5000",
+            "memory_total": 25757220864
+        },
+        {
+            "name": "NVIDIA RTX A5000",
+            "memory_total": 25757220864
+        },
+        {
+            "name": "NVIDIA RTX A5000",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 251.60920333862305
+    }
+}

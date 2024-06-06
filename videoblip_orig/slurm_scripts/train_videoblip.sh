@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1 # Allocate *at most* 1 task for job steps in the job
 #SBATCH --cpus-per-task=1 # Each task needs only one CPU
 #SBATCH --mem=12G # This particular job won't need much memory
-#SBATCH --time=1:00:00  # 7 day and 1 minute 
+#SBATCH --time=7-00:01:00  # 7 day and 1 minute 
 #SBATCH --job-name="batch job test"
 #SBATCH -p cpu # You could pick other partitions for other jobs
 #SBATCH --wait-all-nodes=1  # Run once all resources are available

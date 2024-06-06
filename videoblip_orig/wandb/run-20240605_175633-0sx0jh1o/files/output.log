@@ -1,0 +1,80 @@
+
+Length of training dataset:34
+Length of validation dataset:34
+
+Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.56s/it]
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+  0%|          | 0/5 [00:00<?, ?it/s]
+  0%|          | 0/5 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/main.py", line 165, in <module>
+    main()
+  File "/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/main.py", line 153, in main
+    trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 1836, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/accelerate/data_loader.py", line 384, in __iter__
+    current_batch = next(dataloader_iter)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/dataset.py", line 138, in __getitem__
+    preproc_seg_frame = self.extract_frames(seg_name,n_seg,start_frame,end_frame)
+  File "/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/dataset.py", line 103, in extract_frames
+    pil_frames = extract_frames_from_video(vid_path,frame_ids)
+  File "/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/utils.py", line 280, in extract_frames_from_video
+    vr = decord.VideoReader(clip_path)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/decord/video_reader.py", line 57, in __init__
+    raise RuntimeError("Error reading " + uri + "...")
+RuntimeError: Error reading 5f4558be-ecb4-4597-871f-cf1221301f91.mp4...
+Traceback (most recent call last):
+  File "/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/main.py", line 165, in <module>
+    main()
+  File "/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/main.py", line 153, in main
+    trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 1836, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/accelerate/data_loader.py", line 384, in __iter__
+    current_batch = next(dataloader_iter)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/dataset.py", line 138, in __getitem__
+    preproc_seg_frame = self.extract_frames(seg_name,n_seg,start_frame,end_frame)
+  File "/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/dataset.py", line 103, in extract_frames
+    pil_frames = extract_frames_from_video(vid_path,frame_ids)
+  File "/home/eegrad/rghosal/cluster_backup/anticipation_Rinki_final/videoblip_orig/utils.py", line 280, in extract_frames_from_video
+    vr = decord.VideoReader(clip_path)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/decord/video_reader.py", line 57, in __init__
+    raise RuntimeError("Error reading " + uri + "...")
+RuntimeError: Error reading 5f4558be-ecb4-4597-871f-cf1221301f91.mp4...
