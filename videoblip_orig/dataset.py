@@ -152,7 +152,7 @@ class SegFileDataset(Dataset):
             # Generate tokenized labels and ids from the prompts
             vid_prompt=seg_vid_prompt.strip(",")+"."
             ##print("vid_prompt",vid_prompt)
-            '''vid_prompt="Ans: "put lid", "put wheel",............., "tighten screw"." '''
+            '''vid_prompt="Answer: "put lid", "put wheel",............., "tighten screw"." '''
 
             tokenized_inputs = generate_input_ids_and_labels(
                     tokenizer=self.processor.tokenizer,

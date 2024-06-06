@@ -431,6 +431,18 @@ _wandb:
     - 1: train/global_step
       6:
       - 3
+    - 1: train/loss
+      5: 1
+      6:
+      - 1
+    - 1: train/learning_rate
+      5: 1
+      6:
+      - 1
+    - 1: train/epoch
+      5: 1
+      6:
+      - 1
 return_dict:
   desc: null
   value: true
