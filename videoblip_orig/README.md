@@ -1,4 +1,4 @@
-**For Shao Yuan: At least 3 GPU required + Replace some folder path name in .sh file**********
+**For Shao Yuan: At least 3 GPU required + Replace some folder path name in .sh file**
 
 Save EGo4D clips in "folder_clips"
 
@@ -29,7 +29,9 @@ forecast_annot_te_dir="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipa
 
 6> line 38: OUT_Dir="" , change this path to your chosen folder, to save checkpoints of the model
 
-To run the code I used: ** sbatch -p vcggpu --gres=gpu:4 --mem=30g --time=07-00:01:00 slurm_scripts/train_videoblip.sh **
+To run the code I used:
+**sbatch -p vcggpu --gres=gpu:4 --mem=30g --time=07-00:01:00 slurm_scripts/train_videoblip.sh**
+
 
 ![orig](https://github.com/rinki447/anticipation_Rinki/assets/132046732/fc252891-f688-47e6-a9c8-216bde33dad2)
 
