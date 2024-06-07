@@ -6,7 +6,7 @@ Save Annotations under "your_annot_folder" from https://drive.google.com/drive/f
 
 eg: for me the folder path is "/data/AmitRoyChowdhury/ego4d_data/v2/annotations/"
 
-Inside slurm/train_videoblip_rinki.sh, replace the paths:
+Inside slurm/train_videoblip_noSlurm.sh, change the line "conda activate llava" with your environment name; and replace the paths of following lines:
 
 
 1> line 29, VIDS_DIR="folder_name" with your "folder_clips"
