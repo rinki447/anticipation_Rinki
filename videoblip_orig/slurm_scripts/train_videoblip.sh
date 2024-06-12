@@ -29,14 +29,14 @@ no_frame=8
 VIDS_DIR="/data/AmitRoyChowdhury/ego4d_data/v2/clips/"
 LTA_ANNOTS_DIR="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/"
 RAM_TAGS_PATH=" /data/AmitRoyChowdhury/Anirudh/ram_openset_tags_ego4d/"
-SAVE_DIR="/data/AmitRoyChowdhury/Rinki/videoblip_orig_model/" #########################changed by rinki
+SAVE_DIR="/data/AmitRoyChowdhury/Rinki/videoblip_orig_sample_model/" #########################changed by rinki
 NUM_TRAIN_EPOCHS=5
 NUM_WORKERS=8
 # MODEL_NAME_OR_PATH="Salesforce/blip2-opt-2.7b"
 PROCESSOR_PATH="Salesforce/blip2-opt-2.7b"
 MODEL_NAME_OR_PATH="Salesforce/blip2-opt-2.7b" #"videoblip_output/checkpoint-999/"
-OUTPUT_DIR="/data/AmitRoyChowdhury/Rinki/videoblip_orig_output/" ############# changed by rinki
-TRAIN_BATCH_SIZE=16
+OUTPUT_DIR="/data/AmitRoyChowdhury/Rinki/videoblip_orig_sample_output/" ############# changed by rinki
+TRAIN_BATCH_SIZE=2
 
 export MASTER_NODE=$(expr 10000 + $(echo -n $SLURM_JOBID | tail -c 4))
 export WORLD_SIZE=$(($SLURM_NNODES * $SLURM_NTASKS_PER_NODE))
@@ -73,10 +73,10 @@ python3 main.py \
     --num_train_epochs ${NUM_TRAIN_EPOCHS} \
     --warmup_steps 1000 \
     --learning_rate 1e-5 \
-    --per_device_train_batch_size 16 \
+    --per_device_train_batch_size 2 \
     --gradient_accumulation_steps 4 \
     --ddp_find_unused_parameters False \
-    --per_device_eval_batch_size 16 \
+    --per_device_eval_batch_size 2 \
     --weight_decay 0.05 \
     --dataloader_num_workers ${NUM_WORKERS} \
     --bf16 True \

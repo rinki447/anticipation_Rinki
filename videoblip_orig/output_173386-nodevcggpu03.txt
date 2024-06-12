@@ -1,0 +1,32 @@
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_functional_video.py:6: UserWarning: The 'torchvision.transforms._functional_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms.functional' module instead.
+  warnings.warn(
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_transforms_video.py:22: UserWarning: The 'torchvision.transforms._transforms_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms' module instead.
+  warnings.warn(
+[2024-06-11 18:29:24,648] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:09,  3.09s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:06<00:06,  3.40s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:10<00:03,  3.42s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.14s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.58s/it]
+  0%|          | 0/7 [00:00<?, ?it/s]/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/dataset_rename.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+Both `max_new_tokens` (=128) and `max_length`(=51) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  0%|          | 0/7 [00:09<?, ?it/s]
+file_name c66c30dd-f7c1-492a-9649-84e9147a3fd2_1411_1651_1479_1719
+prompt What are the next 20 future actions that the camera wearer is going to do?
+save path /data/AmitRoyChowdhury/Rinki/videoblip_orig_cap_generations/c66c30dd-f7c1-492a-9649-84e9147a3fd2_1411_1651_1479_1719
+sample['frames'] shape: torch.Size([2, 3, 8, 224, 224])
+frames shape torch.Size([1, 2, 3, 8, 224, 224])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([16, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([16, 1408])
+last_hidden_state modified shape: torch.Size([1, 4112, 1408])
+pooler_output modified shape: torch.Size([1, 16, 1408])
+outputs shape torch.Size([5, 64])
+bos token shape: torch.Size([5, 1])
+generated id shape: torch.Size([5, 65])
+generated text [' Answer:"take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle".', ' Answer:"take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle".', ' Answer:"take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle".', ' Answer:"take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle".', ' Answer:"take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle","take needle","put needle".']
+ground truth Answer:"pull bag","hold hole","take bag","put bag","put bag","take needle","put needle","take rope","hold bag","press hole","press phone","break phone","hold string","unroll string","put string","arrange string","take needle","take string","pull string","hold rope".
+Traceback (most recent call last):
+  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/compute_videoblip_acc_rinki.py", line 295, in <module>
+    generate(
+  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/compute_videoblip_acc_rinki.py", line 207, in generate
+    ed=edit_distance(pred_sentence,ground_sentence)
+NameError: name 'edit_distance' is not defined

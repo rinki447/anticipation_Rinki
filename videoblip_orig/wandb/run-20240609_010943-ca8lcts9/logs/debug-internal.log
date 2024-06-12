@@ -1,0 +1,529 @@
+2024-06-09 01:09:43,545 INFO    StreamThr :27558 [internal.py:wandb_internal():86] W&B internal server running at pid: 27558, started at: 2024-06-09 01:09:43.544067
+2024-06-09 01:09:43,552 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status
+2024-06-09 01:09:43,554 INFO    WriterThread:27558 [datastore.py:open_for_write():87] open: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/run-ca8lcts9.wandb
+2024-06-09 01:09:43,555 DEBUG   SenderThread:27558 [sender.py:send():379] send: header
+2024-06-09 01:09:43,575 DEBUG   SenderThread:27558 [sender.py:send():379] send: run
+2024-06-09 01:09:43,892 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: check_version
+2024-06-09 01:09:43,892 INFO    SenderThread:27558 [dir_watcher.py:__init__():211] watching files in: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files
+2024-06-09 01:09:43,892 INFO    SenderThread:27558 [sender.py:_start_run_threads():1124] run started: ca8lcts9 with start time 1717920583.546783
+2024-06-09 01:09:43,892 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: check_version
+2024-06-09 01:09:43,971 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: run_start
+2024-06-09 01:09:43,978 DEBUG   HandlerThread:27558 [system_info.py:__init__():26] System info init
+2024-06-09 01:09:43,978 DEBUG   HandlerThread:27558 [system_info.py:__init__():41] System info init done
+2024-06-09 01:09:43,978 INFO    HandlerThread:27558 [system_monitor.py:start():194] Starting system monitor
+2024-06-09 01:09:43,978 INFO    SystemMonitor:27558 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-06-09 01:09:43,979 INFO    HandlerThread:27558 [system_monitor.py:probe():214] Collecting system info
+2024-06-09 01:09:43,991 INFO    SystemMonitor:27558 [interfaces.py:start():190] Started cpu monitoring
+2024-06-09 01:09:43,993 INFO    SystemMonitor:27558 [interfaces.py:start():190] Started disk monitoring
+2024-06-09 01:09:43,995 INFO    SystemMonitor:27558 [interfaces.py:start():190] Started gpu monitoring
+2024-06-09 01:09:43,995 INFO    SystemMonitor:27558 [interfaces.py:start():190] Started memory monitoring
+2024-06-09 01:09:43,996 INFO    SystemMonitor:27558 [interfaces.py:start():190] Started network monitoring
+2024-06-09 01:09:43,997 DEBUG   HandlerThread:27558 [system_info.py:probe():150] Probing system
+2024-06-09 01:09:44,007 DEBUG   HandlerThread:27558 [system_info.py:_probe_git():135] Probing git
+2024-06-09 01:09:44,016 DEBUG   HandlerThread:27558 [system_info.py:_probe_git():143] Probing git done
+2024-06-09 01:09:44,016 DEBUG   HandlerThread:27558 [system_info.py:probe():198] Probing system done
+2024-06-09 01:09:44,016 DEBUG   HandlerThread:27558 [system_monitor.py:probe():223] {'os': 'Linux-3.10.0-1160.83.1.el7.x86_64-x86_64-with-glibc2.17', 'python': '3.10.14', 'heartbeatAt': '2024-06-09T08:09:43.997762', 'startedAt': '2024-06-09T08:09:43.534133', 'docker': None, 'cuda': None, 'args': ('--n_present_video', '2', '--n_future_video', '20', '--no_frame', '8', '--forecast_annot_tr_dir', '/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipation_final_train_annots.json', '--forecast_annot_te_dir', '/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipation_final_test_annots.json', '--vids_dir', '/data/AmitRoyChowdhury/ego4d_data/v2/clips/', '--model_name_or_path', 'Salesforce/blip2-opt-2.7b', '--lta_annots_dir', '/data/AmitRoyChowdhury/ego4d_data/v2/annotations/', '--output_dir', '/data/AmitRoyChowdhury/Rinki/videoblip_orig_sample_output/', '--save_dir', '/data/AmitRoyChowdhury/Rinki/videoblip_orig_sample_model/', '--num_train_epochs', '3', '--warmup_steps', '1000', '--learning_rate', '1e-5', '--per_device_train_batch_size', '2', '--gradient_accumulation_steps', '4', '--ddp_find_unused_parameters', 'False', '--per_device_eval_batch_size', '2', '--weight_decay', '0.05', '--dataloader_num_workers', '8', '--bf16', 'True', '--evaluation_strategy', 'epoch', '--eval_steps', '200', '--save_strategy', 'epoch', '--save_steps', '200', '--save_total_limit', '3', '--logging_steps', '10'), 'state': 'running', 'program': '/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/main.py', 'codePathLocal': 'main.py', 'codePath': 'videoblip_orig/main.py', 'git': {'remote': 'git@github.com:rinki447/anticipation_Rinki.git', 'commit': 'b8d6abad8099268fc4e9a0a8f1a98b0dda106921'}, 'email': 'rinki447@gmail.com', 'root': '/home/eegrad/rghosal/anticipation_Rinki', 'host': 'nodevcggpu03.cris.local', 'username': 'rghosal', 'executable': '/home/eegrad/rghosal/anaconda3/envs/llava/bin/python3', 'cpu_count': 32, 'cpu_count_logical': 32, 'cpu_freq': {'current': 2109.375, 'min': 1500.0, 'max': 3200.0}, 'cpu_freq_per_core': [{'current': 2300.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 3200.0, 'min': 1500.0, 'max': 3200.0}, {'current': 3200.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 3200.0, 'min': 1500.0, 'max': 3200.0}, {'current': 3200.0, 'min': 1500.0, 'max': 3200.0}, {'current': 3200.0, 'min': 1500.0, 'max': 3200.0}, {'current': 3200.0, 'min': 1500.0, 'max': 3200.0}, {'current': 3200.0, 'min': 1500.0, 'max': 3200.0}, {'current': 3200.0, 'min': 1500.0, 'max': 3200.0}, {'current': 3200.0, 'min': 1500.0, 'max': 3200.0}, {'current': 3200.0, 'min': 1500.0, 'max': 3200.0}, {'current': 3200.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}, {'current': 1500.0, 'min': 1500.0, 'max': 3200.0}], 'disk': {'/': {'total': 399.8046875, 'used': 10.56222152709961}}, 'gpu': 'NVIDIA RTX A5000', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA RTX A5000', 'memory_total': 25757220864}], 'memory': {'total': 251.60920333862305}}
+2024-06-09 01:09:44,016 INFO    HandlerThread:27558 [system_monitor.py:probe():224] Finished collecting system info
+2024-06-09 01:09:44,016 INFO    HandlerThread:27558 [system_monitor.py:probe():227] Publishing system info
+2024-06-09 01:09:44,016 DEBUG   HandlerThread:27558 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-06-09 01:09:44,969 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_created():271] file/dir created: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/conda-environment.yaml
+2024-06-09 01:09:49,444 DEBUG   HandlerThread:27558 [system_info.py:_save_conda():222] Saving conda packages done
+2024-06-09 01:09:49,445 INFO    HandlerThread:27558 [system_monitor.py:probe():229] Finished publishing system info
+2024-06-09 01:09:49,450 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:09:49,450 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: keepalive
+2024-06-09 01:09:49,450 DEBUG   SenderThread:27558 [sender.py:send():379] send: files
+2024-06-09 01:09:49,450 INFO    SenderThread:27558 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-06-09 01:09:49,650 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: python_packages
+2024-06-09 01:09:49,650 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: python_packages
+2024-06-09 01:09:49,651 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:09:49,651 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:09:49,653 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:09:49,733 DEBUG   SenderThread:27558 [sender.py:send():379] send: telemetry
+2024-06-09 01:09:49,843 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: log_artifact
+2024-06-09 01:09:49,843 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: log_artifact
+2024-06-09 01:09:49,851 INFO    wandb-upload_0:27558 [upload_job.py:push():131] Uploaded file /tmp/tmp_m7pxcrlwandb/yglw8e7j-wandb-metadata.json
+2024-06-09 01:09:49,970 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/conda-environment.yaml
+2024-06-09 01:09:49,970 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_created():271] file/dir created: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/wandb-metadata.json
+2024-06-09 01:09:49,970 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_created():271] file/dir created: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/requirements.txt
+2024-06-09 01:09:50,419 INFO    wandb-upload_0:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmptiy61tz8
+2024-06-09 01:09:50,420 INFO    wandb-upload_2:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmpber_29mh
+2024-06-09 01:09:50,420 INFO    wandb-upload_4:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmphfudzmht
+2024-06-09 01:09:50,420 INFO    wandb-upload_7:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmpkbekfrpa
+2024-06-09 01:09:50,420 INFO    wandb-upload_9:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmpd52r8vdx
+2024-06-09 01:09:50,420 INFO    wandb-upload_10:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmpq7auiggk
+2024-06-09 01:09:50,420 INFO    wandb-upload_5:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmp8_q3rpo4
+2024-06-09 01:09:50,420 INFO    wandb-upload_1:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmptgc7eggk
+2024-06-09 01:09:50,420 INFO    wandb-upload_8:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmpdwynfbxl
+2024-06-09 01:09:50,420 INFO    wandb-upload_6:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmpbursx5k1
+2024-06-09 01:09:50,420 INFO    wandb-upload_11:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmp09ta17wz
+2024-06-09 01:09:50,421 INFO    wandb-upload_12:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmppriokov4
+2024-06-09 01:09:50,545 INFO    wandb-upload_3:27558 [upload_job.py:push():89] Uploaded file /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmpdn84gwjd
+2024-06-09 01:09:51,082 INFO    SenderThread:27558 [sender.py:send_request_log_artifact():1456] logged artifact source-VideoBLIP_Original-videoblip_orig_main.py - {'id': 'QXJ0aWZhY3Q6ODY1NDc3ODgx', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE4MzE5NTE0MQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6ODY1NDcyNDE4', 'versionIndex': 1}}}
+2024-06-09 01:09:54,083 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:09:59,083 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:10:02,034 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_created():271] file/dir created: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:10:04,051 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:10:04,761 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:10:06,137 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:10:06,137 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:10:06,138 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:10:08,056 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:10:10,290 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:10:11,059 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:10:15,293 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:10:16,252 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/config.yaml
+2024-06-09 01:10:20,389 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:10:21,137 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:10:21,138 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:10:21,177 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:10:26,209 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:10:28,337 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:10:31,008 DEBUG   SenderThread:27558 [sender.py:send():379] send: config
+2024-06-09 01:10:31,009 DEBUG   SenderThread:27558 [sender.py:send():379] send: metric
+2024-06-09 01:10:31,009 DEBUG   SenderThread:27558 [sender.py:send():379] send: telemetry
+2024-06-09 01:10:31,009 DEBUG   SenderThread:27558 [sender.py:send():379] send: metric
+2024-06-09 01:10:31,009 WARNING SenderThread:27558 [sender.py:send_metric():1341] Seen metric with glob (shouldn't happen)
+2024-06-09 01:10:31,010 DEBUG   SenderThread:27558 [sender.py:send():379] send: telemetry
+2024-06-09 01:10:32,011 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:10:32,342 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:10:36,138 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:10:36,138 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:10:36,177 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:10:37,288 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:10:42,289 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:10:43,996 DEBUG   SystemMonitor:27558 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-06-09 01:10:43,997 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:10:48,001 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:10:48,594 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/config.yaml
+2024-06-09 01:10:51,138 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:10:51,138 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:10:51,177 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:10:53,259 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:10:58,259 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:11:03,260 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:11:06,138 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:11:06,138 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:11:06,177 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:11:09,212 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:11:13,998 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:11:14,998 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:11:19,999 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:11:21,138 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:11:21,138 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:11:21,177 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:11:25,245 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:11:30,247 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:11:35,252 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:11:36,138 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:11:36,139 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:11:36,139 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:11:40,308 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:11:43,998 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:11:44,106 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:11:45,999 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:11:48,109 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:11:51,010 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:11:51,138 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:11:51,139 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:11:51,178 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:11:56,114 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:11:56,663 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:11:57,115 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:12:01,663 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:12:06,139 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:12:06,139 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:12:06,178 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:12:07,277 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:12:12,278 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:12:13,999 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:12:18,000 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:12:21,138 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:12:21,139 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:12:21,178 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:12:23,223 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:12:28,224 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:12:33,225 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:12:36,139 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:12:36,139 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:12:36,139 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:12:38,285 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:12:43,286 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:12:44,020 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:12:49,021 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:12:51,139 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:12:51,139 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:12:51,139 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:12:54,241 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:12:59,242 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:13:04,242 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:13:06,139 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:13:06,139 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:13:06,139 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:13:09,268 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:13:10,091 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:13:11,093 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:13:14,000 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:13:15,001 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:13:17,737 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: partial_history
+2024-06-09 01:13:17,738 DEBUG   SenderThread:27558 [sender.py:send():379] send: metric
+2024-06-09 01:13:17,739 DEBUG   SenderThread:27558 [sender.py:send():379] send: metric
+2024-06-09 01:13:17,739 DEBUG   SenderThread:27558 [sender.py:send():379] send: metric
+2024-06-09 01:13:17,739 DEBUG   SenderThread:27558 [sender.py:send():379] send: metric
+2024-06-09 01:13:17,739 DEBUG   SenderThread:27558 [sender.py:send():379] send: metric
+2024-06-09 01:13:17,739 DEBUG   SenderThread:27558 [sender.py:send():379] send: history
+2024-06-09 01:13:17,739 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: summary_record
+2024-06-09 01:13:17,740 INFO    SenderThread:27558 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-06-09 01:13:18,097 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:13:18,097 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_created():271] file/dir created: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/wandb-summary.json
+2024-06-09 01:13:19,101 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:13:20,102 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:13:20,756 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:13:21,152 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:13:21,152 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:13:21,153 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:13:26,257 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:13:27,276 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/config.yaml
+2024-06-09 01:13:31,572 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:13:36,573 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:13:41,573 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:13:44,001 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:13:47,002 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:13:52,003 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:13:57,003 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:14:00,665 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:14:00,665 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:14:00,704 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:14:02,777 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:14:07,777 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:14:12,778 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:14:14,002 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:14:18,003 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:14:23,004 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:14:28,005 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:14:33,005 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:14:38,006 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:14:40,366 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:14:40,366 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:14:40,366 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:14:43,453 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:14:44,003 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:14:49,004 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:14:54,004 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:14:59,005 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:15:04,006 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:15:09,006 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:15:14,004 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:15:15,005 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:15:20,005 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:15:25,006 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:15:30,007 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:15:32,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:15:32,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:15:32,610 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:15:35,703 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:15:41,673 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:15:43,182 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:15:44,005 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:15:47,005 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:15:47,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:15:47,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:15:47,610 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:15:52,699 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:15:57,699 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:02,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:16:02,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:16:02,611 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:16:02,706 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:07,707 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:12,707 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:14,005 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:16:17,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:16:17,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:16:17,610 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:16:17,718 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:22,718 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:27,719 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:32,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:16:32,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:16:32,611 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:16:32,723 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:37,723 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:42,725 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:44,006 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:16:47,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:16:47,611 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:16:47,611 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:16:47,745 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:52,747 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:56,484 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:16:57,518 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:16:57,846 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:16:58,521 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:17:02,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:17:02,611 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:17:02,611 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:17:03,697 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:17:05,569 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:17:06,592 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:17:09,239 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:17:14,240 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:17:16,325 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:17:17,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:17:17,611 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:17:17,611 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:17:19,677 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:17:24,677 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:17:29,678 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:17:32,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:17:32,611 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:17:32,611 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:17:34,791 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:17:39,791 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:17:44,007 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:17:45,008 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:17:47,610 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:17:47,611 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:17:47,611 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:17:50,732 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:17:55,732 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:18:00,733 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:18:02,613 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:18:02,614 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:18:02,614 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:18:05,781 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:18:10,786 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:18:14,009 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:18:16,010 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:18:17,613 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:18:17,613 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:18:17,614 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:18:20,528 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:18:21,576 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:18:21,630 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:18:26,631 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:18:27,438 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: partial_history
+2024-06-09 01:18:27,439 DEBUG   SenderThread:27558 [sender.py:send():379] send: history
+2024-06-09 01:18:27,439 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: summary_record
+2024-06-09 01:18:27,440 INFO    SenderThread:27558 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-06-09 01:18:27,579 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/wandb-summary.json
+2024-06-09 01:18:28,581 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:18:29,582 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:18:32,443 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:18:37,444 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:18:42,445 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:18:44,009 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:18:48,010 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:18:53,011 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:18:58,011 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:19:03,012 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:19:06,333 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:19:06,334 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:19:06,334 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:19:08,460 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:19:13,461 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:19:14,010 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:19:19,011 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:19:24,011 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:19:29,012 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:19:34,012 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:19:39,013 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:19:44,011 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:19:45,011 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:19:50,012 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:19:50,947 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:19:50,947 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:19:50,947 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:19:55,076 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:20:00,076 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:20:05,077 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:20:10,078 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:20:14,011 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:20:16,012 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:20:21,013 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:20:23,426 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:20:23,426 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:20:23,465 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:20:26,580 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:20:30,127 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: partial_history
+2024-06-09 01:20:30,129 DEBUG   SenderThread:27558 [sender.py:send():379] send: metric
+2024-06-09 01:20:30,130 DEBUG   SenderThread:27558 [sender.py:send():379] send: metric
+2024-06-09 01:20:30,130 DEBUG   SenderThread:27558 [sender.py:send():379] send: metric
+2024-06-09 01:20:30,130 DEBUG   SenderThread:27558 [sender.py:send():379] send: metric
+2024-06-09 01:20:30,130 DEBUG   SenderThread:27558 [sender.py:send():379] send: metric
+2024-06-09 01:20:30,130 DEBUG   SenderThread:27558 [sender.py:send():379] send: history
+2024-06-09 01:20:30,130 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: summary_record
+2024-06-09 01:20:30,132 INFO    SenderThread:27558 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-06-09 01:20:30,557 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/wandb-summary.json
+2024-06-09 01:20:31,559 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:20:32,168 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:20:32,561 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:20:37,169 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:20:42,176 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:20:42,905 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/config.yaml
+2024-06-09 01:20:44,013 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:20:48,014 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:20:53,014 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:20:56,137 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:20:56,137 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:20:56,138 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:20:58,251 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:21:03,252 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:21:08,252 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:21:13,253 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:21:14,014 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:21:19,015 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:21:22,018 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:21:22,019 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:21:22,058 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:21:24,091 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:21:29,092 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:21:34,093 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:21:39,093 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:21:44,015 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:21:45,015 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:21:48,159 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: stop_status
+2024-06-09 01:21:48,159 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:21:48,159 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: stop_status
+2024-06-09 01:21:49,135 DEBUG   SenderThread:27558 [sender.py:send():379] send: telemetry
+2024-06-09 01:21:49,174 DEBUG   SenderThread:27558 [sender.py:send():379] send: exit
+2024-06-09 01:21:49,175 INFO    SenderThread:27558 [sender.py:send_exit():586] handling exit code: 0
+2024-06-09 01:21:49,175 INFO    SenderThread:27558 [sender.py:send_exit():588] handling runtime: 725
+2024-06-09 01:21:49,182 INFO    SenderThread:27558 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-06-09 01:21:49,183 INFO    SenderThread:27558 [sender.py:send_exit():594] send defer
+2024-06-09 01:21:49,183 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:49,183 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 0
+2024-06-09 01:21:49,183 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:49,183 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-06-09 01:21:49,183 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 1
+2024-06-09 01:21:49,183 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:49,183 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 1
+2024-06-09 01:21:49,184 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:49,184 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-06-09 01:21:49,184 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 2
+2024-06-09 01:21:49,184 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:49,184 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 2
+2024-06-09 01:21:49,184 INFO    HandlerThread:27558 [system_monitor.py:finish():203] Stopping system monitor
+2024-06-09 01:21:49,184 DEBUG   SystemMonitor:27558 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-06-09 01:21:49,184 DEBUG   SystemMonitor:27558 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-06-09 01:21:49,190 INFO    HandlerThread:27558 [interfaces.py:finish():202] Joined cpu monitor
+2024-06-09 01:21:49,191 INFO    HandlerThread:27558 [interfaces.py:finish():202] Joined disk monitor
+2024-06-09 01:21:49,266 INFO    HandlerThread:27558 [interfaces.py:finish():202] Joined gpu monitor
+2024-06-09 01:21:49,266 INFO    HandlerThread:27558 [interfaces.py:finish():202] Joined memory monitor
+2024-06-09 01:21:49,266 INFO    HandlerThread:27558 [interfaces.py:finish():202] Joined network monitor
+2024-06-09 01:21:49,267 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:49,267 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-06-09 01:21:49,267 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 3
+2024-06-09 01:21:49,267 DEBUG   SenderThread:27558 [sender.py:send():379] send: stats
+2024-06-09 01:21:49,268 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:49,268 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 3
+2024-06-09 01:21:49,268 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:49,268 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-06-09 01:21:49,268 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 4
+2024-06-09 01:21:49,268 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:49,268 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 4
+2024-06-09 01:21:49,268 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:49,269 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-06-09 01:21:49,269 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 5
+2024-06-09 01:21:49,269 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:49,269 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 5
+2024-06-09 01:21:49,269 DEBUG   SenderThread:27558 [sender.py:send():379] send: summary
+2024-06-09 01:21:49,271 INFO    SenderThread:27558 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-06-09 01:21:49,272 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:49,272 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-06-09 01:21:49,272 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 6
+2024-06-09 01:21:49,272 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:49,272 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 6
+2024-06-09 01:21:49,272 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:49,272 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-06-09 01:21:49,278 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:21:49,411 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 7
+2024-06-09 01:21:49,411 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:49,411 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 7
+2024-06-09 01:21:49,411 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:49,411 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-06-09 01:21:49,577 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/wandb-summary.json
+2024-06-09 01:21:49,577 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/config.yaml
+2024-06-09 01:21:50,137 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: poll_exit
+2024-06-09 01:21:50,989 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 8
+2024-06-09 01:21:50,990 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: poll_exit
+2024-06-09 01:21:50,990 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:50,990 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 8
+2024-06-09 01:21:50,990 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:50,991 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-06-09 01:21:50,991 INFO    SenderThread:27558 [job_builder.py:build():318] Attempting to build job artifact
+2024-06-09 01:21:50,994 INFO    SenderThread:27558 [job_builder.py:_get_source_type():455] is repo sourced job
+2024-06-09 01:21:51,000 INFO    SenderThread:27558 [job_builder.py:build():431] adding wandb-job metadata file
+2024-06-09 01:21:51,011 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 9
+2024-06-09 01:21:51,012 DEBUG   SenderThread:27558 [sender.py:send():379] send: artifact
+2024-06-09 01:21:51,012 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:51,016 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 9
+2024-06-09 01:21:51,138 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: poll_exit
+2024-06-09 01:21:51,418 INFO    wandb-upload_0:27558 [upload_job.py:push():86] Skipped uploading /home/eegrad/rghosal/.local/share/wandb/artifacts/staging/tmptvdxccl3
+2024-06-09 01:21:51,578 INFO    Thread-12 :27558 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:21:53,306 INFO    wandb-upload_2:27558 [upload_job.py:push():89] Uploaded file /tmp/tmp27sl75_p/wandb-job.json
+2024-06-09 01:21:54,017 INFO    SenderThread:27558 [sender.py:send_artifact():1468] sent artifact job-git_github.com_rinki447_anticipation_Rinki.git_videoblip_orig_main.py - {'id': 'QXJ0aWZhY3Q6ODY1NDg1ODE4', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE4MzE5NTI5Nw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6ODYzMjk0ODA1', 'versionIndex': 0}}}
+2024-06-09 01:21:54,017 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:54,017 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 9
+2024-06-09 01:21:54,017 INFO    SenderThread:27558 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-06-09 01:21:54,579 INFO    SenderThread:27558 [dir_watcher.py:finish():388] scan: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files
+2024-06-09 01:21:54,580 INFO    SenderThread:27558 [dir_watcher.py:finish():402] scan save: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/wandb-summary.json wandb-summary.json
+2024-06-09 01:21:54,580 INFO    SenderThread:27558 [dir_watcher.py:finish():402] scan save: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log output.log
+2024-06-09 01:21:54,580 INFO    SenderThread:27558 [dir_watcher.py:finish():402] scan save: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/wandb-metadata.json wandb-metadata.json
+2024-06-09 01:21:54,580 INFO    SenderThread:27558 [dir_watcher.py:finish():402] scan save: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/config.yaml config.yaml
+2024-06-09 01:21:54,580 INFO    SenderThread:27558 [dir_watcher.py:finish():402] scan save: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/conda-environment.yaml conda-environment.yaml
+2024-06-09 01:21:54,580 INFO    SenderThread:27558 [dir_watcher.py:finish():402] scan save: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/requirements.txt requirements.txt
+2024-06-09 01:21:54,581 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 10
+2024-06-09 01:21:54,581 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: poll_exit
+2024-06-09 01:21:54,581 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:54,581 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 10
+2024-06-09 01:21:54,581 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:54,581 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 10
+2024-06-09 01:21:54,581 INFO    SenderThread:27558 [file_pusher.py:finish():172] shutting down file pusher
+2024-06-09 01:21:54,855 INFO    wandb-upload_7:27558 [upload_job.py:push():131] Uploaded file /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/wandb-summary.json
+2024-06-09 01:21:55,139 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: poll_exit
+2024-06-09 01:21:55,140 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: poll_exit
+2024-06-09 01:21:55,990 INFO    wandb-upload_9:27558 [upload_job.py:push():131] Uploaded file /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/output.log
+2024-06-09 01:21:56,083 INFO    wandb-upload_1:27558 [upload_job.py:push():131] Uploaded file /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/requirements.txt
+2024-06-09 01:21:56,088 INFO    wandb-upload_10:27558 [upload_job.py:push():131] Uploaded file /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/config.yaml
+2024-06-09 01:21:56,099 INFO    wandb-upload_5:27558 [upload_job.py:push():131] Uploaded file /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/files/conda-environment.yaml
+2024-06-09 01:21:56,140 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: poll_exit
+2024-06-09 01:21:56,140 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: poll_exit
+2024-06-09 01:21:56,140 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: status_report
+2024-06-09 01:21:56,299 INFO    Thread-11 (_thread_body):27558 [sender.py:transition_state():614] send defer: 11
+2024-06-09 01:21:56,300 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:56,300 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 11
+2024-06-09 01:21:56,300 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:56,300 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 11
+2024-06-09 01:21:56,300 INFO    SenderThread:27558 [file_pusher.py:join():178] waiting for file pusher
+2024-06-09 01:21:56,301 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 12
+2024-06-09 01:21:56,301 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:56,301 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 12
+2024-06-09 01:21:56,301 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:56,301 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 12
+2024-06-09 01:21:56,301 INFO    SenderThread:27558 [file_stream.py:finish():614] file stream finish called
+2024-06-09 01:21:56,554 INFO    SenderThread:27558 [file_stream.py:finish():618] file stream finish is done
+2024-06-09 01:21:56,554 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 13
+2024-06-09 01:21:56,554 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:56,554 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 13
+2024-06-09 01:21:56,555 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:56,555 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 13
+2024-06-09 01:21:56,555 INFO    SenderThread:27558 [sender.py:transition_state():614] send defer: 14
+2024-06-09 01:21:56,555 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: defer
+2024-06-09 01:21:56,555 INFO    HandlerThread:27558 [handler.py:handle_request_defer():172] handle defer: 14
+2024-06-09 01:21:56,555 DEBUG   SenderThread:27558 [sender.py:send():379] send: final
+2024-06-09 01:21:56,556 DEBUG   SenderThread:27558 [sender.py:send():379] send: footer
+2024-06-09 01:21:56,556 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: defer
+2024-06-09 01:21:56,556 INFO    SenderThread:27558 [sender.py:send_request_defer():610] handle sender defer: 14
+2024-06-09 01:21:56,556 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: poll_exit
+2024-06-09 01:21:56,557 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: poll_exit
+2024-06-09 01:21:56,558 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: internal_messages
+2024-06-09 01:21:56,558 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: server_info
+2024-06-09 01:21:56,559 DEBUG   SenderThread:27558 [sender.py:send_request():406] send_request: server_info
+2024-06-09 01:21:56,598 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: get_summary
+2024-06-09 01:21:56,599 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: sampled_history
+2024-06-09 01:21:56,640 DEBUG   HandlerThread:27558 [handler.py:handle_request():146] handle_request: shutdown
+2024-06-09 01:21:56,640 INFO    HandlerThread:27558 [handler.py:finish():866] shutting down handler
+2024-06-09 01:21:57,559 INFO    WriterThread:27558 [datastore.py:close():296] close: /home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/wandb/run-20240609_010943-ca8lcts9/run-ca8lcts9.wandb
+2024-06-09 01:21:57,635 INFO    SenderThread:27558 [sender.py:finish():1546] shutting down sender
+2024-06-09 01:21:57,635 INFO    SenderThread:27558 [file_pusher.py:finish():172] shutting down file pusher
+2024-06-09 01:21:57,636 INFO    SenderThread:27558 [file_pusher.py:join():178] waiting for file pusher

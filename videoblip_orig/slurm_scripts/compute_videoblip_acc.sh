@@ -13,20 +13,19 @@
 
 # Place any commands you want to run below
 
-conda activate eilev
-model_path="videoblip_orig_cap_model"
-annots_path="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/fho_lta_val.json"
-# processor_path="Salesforce/blip2-opt-2.7b"
+conda activate llava
+model_path="/data/AmitRoyChowdhury/Rinki/videoblip_orig_output/checkpoint-593"
+annots_path="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipation_final_test_annots.json"
+processor_path="Salesforce/blip2-opt-2.7b"
 vids_dir="/data/AmitRoyChowdhury/ego4d_data/v2/clips/"
-save_dir="/data/AmitRoyChowdhury/Anirudh/videoblip_orig_cap_generations/"
-ram_tags_path="/data/AmitRoyChowdhury/Anirudh/ram_openset_tags_ego4d/"
+save_dir="/data/AmitRoyChowdhury/Rinki/videoblip_orig_cap_generations/"
+#ram_tags_path="/data/AmitRoyChowdhury/Anirudh/ram_openset_tags_ego4d/"
 device="cuda"
 
-python3 compute_videoblip_acc.py \
+python3 compute_videoblip_acc_rinki.py \
   --device ${device} \
   --model ${model_path} \
   --vids_dir ${vids_dir} \
   --annots_path ${annots_path} \
-  --ram_tags_path ${ram_tags_path} \
-  --save_dir ${save_dir} 
-  # --processor ${processor}
+  --save_dir ${save_dir} \
+  --processor ${processor_path}

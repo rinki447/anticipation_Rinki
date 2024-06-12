@@ -1,0 +1,118 @@
+
+Length of training dataset:34
+Length of validation dataset:34
+
+Loading checkpoint shards:  50%|█████     | 1/2 [01:06<01:06, 66.29s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [01:31<00:00, 45.98s/it]
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+  0%|          | 0/5 [00:00<?, ?it/s]
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+  0%|          | 0/5 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/main.py", line 165, in <module>
+    main()
+  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/main.py", line 153, in main
+    trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 1869, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 2772, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 2795, in compute_loss
+    outputs = model(**inputs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/accelerate/utils/operations.py", line 581, in forward
+    return model_forward(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/accelerate/utils/operations.py", line 569, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/amp/autocast_mode.py", line 16, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/models.py", line 344, in forward
+    outputs = self.language_model(
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/models/opt/modeling_opt.py", line 1145, in forward
+    outputs = self.model.decoder(
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/models/opt/modeling_opt.py", line 911, in forward
+    layer_outputs = decoder_layer(
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/models/opt/modeling_opt.py", line 576, in forward
+    hidden_states = self.activation_fn(hidden_states)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 101, in forward
+    return F.relu(input, inplace=self.inplace)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/functional.py", line 1471, in relu
+    result = torch.relu(input)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 38.00 MiB. GPU 0 has a total capacty of 23.68 GiB of which 23.00 MiB is free. Including non-PyTorch memory, this process has 23.65 GiB memory in use. Of the allocated memory 22.23 GiB is allocated by PyTorch, and 182.59 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Traceback (most recent call last):
+  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/main.py", line 165, in <module>
+    main()
+  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/main.py", line 153, in main
+    trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 1869, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 2772, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 2795, in compute_loss
+    outputs = model(**inputs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/accelerate/utils/operations.py", line 581, in forward
+    return model_forward(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/accelerate/utils/operations.py", line 569, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/amp/autocast_mode.py", line 16, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/models.py", line 344, in forward
+    outputs = self.language_model(
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/models/opt/modeling_opt.py", line 1145, in forward
+    outputs = self.model.decoder(
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/models/opt/modeling_opt.py", line 911, in forward
+    layer_outputs = decoder_layer(
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/models/opt/modeling_opt.py", line 576, in forward
+    hidden_states = self.activation_fn(hidden_states)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 101, in forward
+    return F.relu(input, inplace=self.inplace)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/functional.py", line 1471, in relu
+    result = torch.relu(input)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 38.00 MiB. GPU 0 has a total capacty of 23.68 GiB of which 23.00 MiB is free. Including non-PyTorch memory, this process has 23.65 GiB memory in use. Of the allocated memory 22.23 GiB is allocated by PyTorch, and 182.59 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

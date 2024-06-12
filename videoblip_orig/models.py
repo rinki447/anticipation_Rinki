@@ -259,6 +259,9 @@ class Blip2ForConditionalGeneration(Blip2PreTrainedModel):
         two
         ```"""
 
+        #print("input id: ",input_ids)
+        #print("input id shape: ",input_ids.shape)
+
         # True
         return_dict = return_dict if return_dict is not None else self.config.use_return_dict
 
@@ -431,7 +434,7 @@ class Blip2ForConditionalGeneration(Blip2PreTrainedModel):
         batch_size = pixel_values.shape[0]
 
         # (B, num_patches*F, dim) eg. (1, 2056[257*8], 1408)
-        image_embeds = self.vision_model(pixel_values, return_dict=True).last_hidden_state
+        image_embeds = self.vision_model(pixel_values, return_dict=True)[0]
 
         # (B, num_patches*F) eg. (1, 2056[257*8])
         image_attention_mask = torch.ones(
@@ -452,12 +455,13 @@ class Blip2ForConditionalGeneration(Blip2PreTrainedModel):
 
         # (B, num_query_tokens, dim) 
         # eg. (1, 32, 768)
-        query_output = query_outputs.last_hidden_state
+        query_output = query_outputs[0]
+        #print("query output shape: ",query_output.shape)
 
         # (B, num_query_tokens, llm_dim) 
         # eg. (1, 32, 2560)
         language_model_inputs = self.language_projection(query_output)
-
+        #print("language model inputs shape: ",language_model_inputs.shape)
         # (B, num_query_tokens) 
         # eg. (1, 32)
         language_attention_mask = torch.ones(
@@ -465,6 +469,7 @@ class Blip2ForConditionalGeneration(Blip2PreTrainedModel):
             dtype=torch.long, 
             device=language_model_inputs.device
         )
+        #print("language input attention mask shape: ",language_attention_mask.shape)
 
         if input_ids is None:
             input_ids = (
@@ -475,6 +480,8 @@ class Blip2ForConditionalGeneration(Blip2PreTrainedModel):
 
         if attention_mask is None:
             attention_mask = torch.ones_like(input_ids)
+
+        #print("input id attention mask shape",attention_mask.shape)
 
         # (B, num_input_tokens + num_query_tokens)
         # eg. (1, 41[32 + 9])
@@ -506,20 +513,28 @@ class Blip2ForConditionalGeneration(Blip2PreTrainedModel):
         outputs = self.language_model.generate(
             inputs_embeds=inputs_embeds,
             attention_mask=attention_mask,
+            num_return_sequences=5,
             **generate_kwargs,
         )
+
+        no_seq=outputs.shape[0]
+
+        print("outputs shape",outputs.shape)
 
         # this is a temporary workaround to be consistent with other generation models and
         # have BOS as the first token, even though under the hood we are calling LM with embeds
         if not self.language_model.config.is_encoder_decoder:
             bos_tokens = (
                 torch.LongTensor([[self.config.text_config.bos_token_id]])
-                .repeat(batch_size, 1)
+                .repeat(no_seq, 1)
                 .to(image_embeds.device)
             )
+
+            print("bos token shape:",bos_tokens.shape)
             if not isinstance(outputs, torch.Tensor):
                 outputs.sequences = torch.cat([bos_tokens, outputs.sequences], dim=-1)
             else:
+
                 outputs = torch.cat([bos_tokens, outputs], dim=-1)
         return outputs
 

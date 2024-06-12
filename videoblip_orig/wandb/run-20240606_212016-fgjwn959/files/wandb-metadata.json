@@ -1,0 +1,333 @@
+{
+    "os": "Linux-3.10.0-1160.90.1.el7.x86_64-x86_64-with-glibc2.17",
+    "python": "3.10.14",
+    "heartbeatAt": "2024-06-07T04:20:17.176428",
+    "startedAt": "2024-06-07T04:20:16.573841",
+    "docker": null,
+    "cuda": "10.2.89",
+    "args": [
+        "--n_present_video",
+        "2",
+        "--n_future_video",
+        "20",
+        "--no_frame",
+        "8",
+        "--forecast_annot_tr_dir",
+        "/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipation_final_train_annots.json",
+        "--forecast_annot_te_dir",
+        "/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipation_final_test_annots.json",
+        "--vids_dir",
+        "/data/AmitRoyChowdhury/ego4d_data/v2/clips/",
+        "--model_name_or_path",
+        "Salesforce/blip2-opt-2.7b",
+        "--lta_annots_dir",
+        "/data/AmitRoyChowdhury/ego4d_data/v2/annotations/",
+        "--output_dir",
+        "/data/AmitRoyChowdhury/Rinki/videoblip_orig_output/",
+        "--save_dir",
+        "/data/AmitRoyChowdhury/Rinki/videoblip_orig_model/",
+        "--num_train_epochs",
+        "5",
+        "--warmup_steps",
+        "1000",
+        "--learning_rate",
+        "1e-5",
+        "--per_device_train_batch_size",
+        "16",
+        "--gradient_accumulation_steps",
+        "4",
+        "--ddp_find_unused_parameters",
+        "False",
+        "--per_device_eval_batch_size",
+        "16",
+        "--weight_decay",
+        "0.05",
+        "--dataloader_num_workers",
+        "8",
+        "--bf16",
+        "True",
+        "--evaluation_strategy",
+        "epoch",
+        "--eval_steps",
+        "200",
+        "--save_strategy",
+        "epoch",
+        "--save_steps",
+        "200",
+        "--save_total_limit",
+        "3",
+        "--logging_steps",
+        "10"
+    ],
+    "state": "running",
+    "program": "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "videoblip_orig/main.py",
+    "git": {
+        "remote": "git@github.com:rinki447/anticipation_Rinki.git",
+        "commit": "b8d6abad8099268fc4e9a0a8f1a98b0dda106921"
+    },
+    "email": "rinki447@gmail.com",
+    "root": "/home/eegrad/rghosal/anticipation_Rinki",
+    "host": "crisgc.engr.ucr.edu",
+    "username": "rghosal",
+    "executable": "/home/eegrad/rghosal/anaconda3/envs/llava/bin/python3",
+    "cpu_count": 24,
+    "cpu_count_logical": 48,
+    "cpu_freq": {
+        "current": 1495.510645833333,
+        "min": 1000.0,
+        "max": 3200.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 999.963,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1799.584,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1099.865,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1085.229,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2799.951,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1199.365,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1199.499,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.5,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2382.751,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1093.017,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 999.963,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 999.963,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2891.394,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 999.963,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2305.944,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2592.224,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 999.963,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.097,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1094.897,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1071.936,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1068.31,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.097,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1054.211,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1060.388,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1001.306,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1494.104,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1039.978,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.634,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2766.247,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1181.372,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1009.228,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2553.417,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2127.087,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1014.465,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1240.319,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1792.199,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2121.716,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1005.737,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2207.116,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2699.914,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2334.143,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1004.394,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1032.592,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1065.893,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2200.268,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1000.097,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 1037.56,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2836.071,
+            "min": 1000.0,
+            "max": 3200.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 424.79541015625,
+            "used": 291.68751525878906
+        }
+    },
+    "memory": {
+        "total": 251.33998107910156
+    }
+}

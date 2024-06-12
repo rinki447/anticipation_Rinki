@@ -1,0 +1,66 @@
+
+Length of training dataset:37947
+Length of validation dataset:19348
+
+Loading checkpoint shards:  50%|████████████████████████████████████▌                                    | 1/2 [00:04<00:04,  4.57s/it]
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████| 2/2 [00:05<00:00,  2.90s/it]
+  0%|                                                                                                         | 0/2965 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/main.py", line 165, in <module>
+    main()
+  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/main.py", line 153, in main
+    trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 1836, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/accelerate/data_loader.py", line 381, in __iter__
+    dataloader_iter = super().__iter__()
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 438, in __iter__
+    return self._get_iterator()
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 386, in _get_iterator
+    return _MultiProcessingDataLoaderIter(self)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1039, in __init__
+    w.start()
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/multiprocessing/context.py", line 288, in _Popen
+    return Popen(process_obj)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/multiprocessing/popen_spawn_posix.py", line 62, in _launch
+    f.write(fp.getbuffer())
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/main.py", line 165, in <module>
+    main()
+  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/main.py", line 153, in main
+    trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 1539, in train
+    return inner_training_loop(
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/trainer.py", line 1836, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/accelerate/data_loader.py", line 381, in __iter__
+    dataloader_iter = super().__iter__()
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 438, in __iter__
+    return self._get_iterator()
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 386, in _get_iterator
+    return _MultiProcessingDataLoaderIter(self)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1039, in __init__
+    w.start()
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/multiprocessing/context.py", line 288, in _Popen
+    return Popen(process_obj)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/multiprocessing/popen_spawn_posix.py", line 62, in _launch
+    f.write(fp.getbuffer())
+KeyboardInterrupt

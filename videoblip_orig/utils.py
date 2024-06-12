@@ -9,7 +9,8 @@ import torch.nn as nn
 import torchvision.transforms as T
 from PIL import Image
 
-from transformers import BatchEncoding, DataCollatorForSeq2Seq, PreTrainedTokenizer
+from transformers import BatchEncoding, DataCollatorForSeq2Seq, PreTrainedTokenizer, Blip2Processor
+
 
 C_REGEX = re.compile(r"^\#C\s+C", re.IGNORECASE)
 EOS_REGEX = re.compile(r"\<\|eos\|\>$", re.IGNORECASE)
@@ -112,6 +113,33 @@ def generate_input_ids_and_labels(
 
     return preprocessed
 
+def generate_input_ids(
+    tokenizer: PreTrainedTokenizer, prompt: str, decoder_only_lm: bool
+) -> BatchEncoding:
+    """Generate input ids and labels from the given prompt and text. If
+    decoder_only_lm is True, the input and label texts are the same, but label
+    tokens that correspond to the prompt are masked with -100. If
+    decoder_only_lm is False, the input corresponds to the prompt and the label
+    to the text.
+
+    :param tokenizer: tokenizer for tokenizing inputs and label
+    :param prompt: prompt for the LLM
+    :param text: text for the LLM to generate based on the prompt
+    :param decoder_only_lm: whether the LLM is decoder only or not
+    :returns: preprocessed results
+    """
+    preprocessed={}
+    if decoder_only_lm:
+        # tokenize prompt first
+        prompt_tokens = tokenizer(prompt, return_attention_mask=False).input_ids
+
+        
+        preprocessed["input_ids"] = prompt_tokens 
+               
+        preprocessed["input_ids"] = torch.tensor(preprocessed["input_ids"])
+        
+
+    return preprocessed
 
 def generate_input_ids_and_labels_from_interleaved(
     tokenizer: PreTrainedTokenizer,
@@ -412,3 +440,34 @@ def extract_validation_samples(val_dataset, save_dir):
         if not os.path.exists(save_path):
             with open(save_path, "wb") as f:
                 pickle.dump(sample_dict, f, pickle.HIGHEST_PROTOCOL)
+
+
+
+def process(
+    processor: Blip2Processor,
+    video: torch.Tensor | None = None,
+    text: str | list[str] | None = None,
+) -> BatchEncoding:
+    """Process videos and texts for VideoBLIP.
+
+    :param video: a tensor of shape (batch, channel, time, height, width) or
+        (channel, time, height, width)
+    """
+    if video is not None:
+        if video.dim() == 4:
+            video = video.unsqueeze(0)
+        batch, channel, time, _, _ = video.size()
+        video = video.permute(0, 2, 1, 3, 4).flatten(end_dim=1)
+    
+    inputs = processor(
+        images=video, 
+        text=text, 
+        return_tensors="pt"
+    )
+
+    if video is not None:
+        _, _, height, weight = inputs.pixel_values.size()
+        inputs["pixel_values"] = inputs.pixel_values.view(
+            batch, time, channel, height, weight
+        ).permute(0, 2, 1, 3, 4)
+    return inputs

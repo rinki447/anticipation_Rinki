@@ -66,8 +66,6 @@ class SegFileDataset(Dataset):
     def __len__(self):
         return len(self.annots)   
 
-   
-            
     def extract_frames(self, clip_path,num_segments,start_frame,end_frame):
         """Given the seg_file, extract the frame-level features
 
@@ -91,10 +89,11 @@ class SegFileDataset(Dataset):
         # 
 
         # Preprocess frames
-        # dict['pixel_values': (num_frames, C, H, W): (4, 3, 224, 224)]
+        # dict['pixel_values': (num_frames, C, H, W): (8, 3, 224, 224)]
         inputs = self.processor(pil_frames, return_tensors='pt')
                 
-        return inputs    
+        return inputs
+   
 
     def __getitem__(self, idx):
 
@@ -107,19 +106,30 @@ class SegFileDataset(Dataset):
 
         input_frames=torch.tensor([])
         tokenized_input=[]
-        #ram_sent_embeds=torch.tensor([])
+        
 
         with torch.no_grad():
+            name=clip_uid
+            path_parts = clip_path.split("/")
+            # Remove the last part
+            path_parts.pop()
+            # Join the remaining parts with '/'
+            vid_root_path = "/".join(path_parts)
+            vid_name=clip_uid+".mp4"
+
+            all_obs_tensor=torch.tensor([])
 
             # info from observed segments
             for seg_info in observed_seg_info_list:
 
-                # find ram_frame_no and ram tags caption for each of the 4 observed input videos
+                
                 start_frame=seg_info["action_clip_start_frame"]
                 end_frame=seg_info["action_clip_end_frame"]
                 seg_name = "{}_start_frame_{}_end_frame_{}".format(clip_uid, start_frame, end_frame)
+                name=name+"_"+f"{start_frame}"+"_"+f"{end_frame}"
 
-                n_seg=8
+                n_seg=8 # no of frame
+
                 
                 preproc_seg_frame = self.extract_frames(clip_path,n_seg,start_frame,end_frame)
 
@@ -135,53 +145,39 @@ class SegFileDataset(Dataset):
                 #print(input_frames.shape)#torch.Size([4, 3, 8, 224, 224])
 
                 
+                
             
             # info from forecast segment 
-            #seg_vid_prompt="The camera wearer will perform the following {} actions: ".format(len(forecast_seg_info_list))
+            
             seg_vid_prompt="Answer:"
+            #all_noun=[]
+            #all_verb=[]
             for count, seg_info in enumerate(forecast_seg_info_list):
                 # Repeat for the final ground-truth narration.
                 seg_gt_noun=seg_info["noun"].split("_")[0]
                 seg_gt_verb=seg_info["verb"].split("_")[0]
+                #seg_noun_synonym = re.findall(r'\b\w+\b', seg_gt_noun.replace('_', ' '))
+                #seg_verb_synonym = re.findall(r'\b\w+\b', seg_gt_verb.replace('_', ' '))
+                #all_noun.append(seg_noun_synonym)
+                #all_noun.append(seg_verb_synonym)
 
-                #seg_vid_prompt = seg_vid_prompt+"\"{}". "{} {}\", where the verb is \"{}\" and the noun is \"{}\",".format(count+1,seg_gt_verb, 
-                                        #seg_gt_noun, seg_gt_verb, seg_gt_noun)
-                #seg_vid_prompt = seg_vid_prompt + "{}. \"{} {}\", where the verb is \"{}\" and the noun is \"{}\",".format(count+1, seg_gt_verb, seg_gt_noun, seg_gt_verb, seg_gt_noun)
-                seg_vid_prompt = seg_vid_prompt + "\"{} {}\",".format(seg_gt_verb, seg_gt_noun)
+                
+                seg_vid_prompt=seg_vid_prompt + "\"{} {}\",".format(seg_gt_verb, seg_gt_noun)
 
-            # Generate tokenized labels and ids from the prompts
+
             vid_prompt=seg_vid_prompt.strip(",")+"."
             ##print("vid_prompt",vid_prompt)
             '''vid_prompt="Answer: "put lid", "put wheel",............., "tighten screw"." '''
 
-            tokenized_inputs = generate_input_ids_and_labels(
-                    tokenizer=self.processor.tokenizer,
-                    prompt=PROMPTS[0],
-                    text=vid_prompt,
-                    decoder_only_lm=self.decoder_only_lm
-                    )
-            #print(tokenized_inputs["input_ids"].shape) #torch.Size([449])
-            #print(tokenized_inputs["labels"].shape) #torch.Size([449])
-            
             
 
             
             out_dict = {}
-
-            out_dict['input_ids'] = tokenized_inputs['input_ids']
-            out_dict['labels'] = tokenized_inputs['labels']
-
             # dict['pixel_values': (num_frames, C, H, W) -> (C, num_frames, H, W): (3, 8, 224, 224)
-            out_dict['pixel_values'] = input_frames
+            out_dict['frames'] = input_frames
+            out_dict["seg_file"]=name
+            out_dict["ground_truth"]=vid_prompt
+            out_dict['prompt'] = PROMPTS[0]
 
-                
-
-        #print("input frame size",input_frames.shape)
-        #input_frames=input_frames.unsqueeze(0)# 4*F*H*W*C
-
-        #print(out_dict['input_ids'].shape) #torch.Size([451])
-        #print(out_dict['labels'].shape) #torch.Size([451])
-        #print(out_dict['pixel_values'].shape) #torch.Size([4, 3, 8, 224, 224])
-        #print(out_dict['ram_sent_embeds'].shape) #torch.Size([4, 8, 384])
-        
+                      
         return out_dict

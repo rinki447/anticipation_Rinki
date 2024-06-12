@@ -1,0 +1,94 @@
+
+Length of training dataset:5
+Length of validation dataset:5
+
+Loading checkpoint shards:  50%|█████     | 1/2 [00:19<00:19, 19.43s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 11.23s/it]
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+  0%|          | 0/3 [00:00<?, ?it/s]
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([32, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([32, 1408])
+last_hidden_state modified shape: torch.Size([2, 4112, 1408])
+pooler_output modified shape: torch.Size([2, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([32, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([32, 1408])
+last_hidden_state modified shape: torch.Size([2, 4112, 1408])
+pooler_output modified shape: torch.Size([2, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([16, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([16, 1408])
+last_hidden_state modified shape: torch.Size([1, 4112, 1408])
+
+ 33%|███▎      | 1/3 [01:24<02:49, 84.65s/it]
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([32, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([32, 1408])
+last_hidden_state modified shape: torch.Size([2, 4112, 1408])
+pooler_output modified shape: torch.Size([2, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([32, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([32, 1408])
+last_hidden_state modified shape: torch.Size([2, 4112, 1408])
+pooler_output modified shape: torch.Size([2, 16, 1408])
+ 67%|██████▋   | 2/3 [00:00<00:00,  4.83it/s]
+output_attentions: None
+
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([16, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([16, 1408])
+last_hidden_state modified shape: torch.Size([1, 4112, 1408])
+pooler_output modified shape: torch.Size([1, 16, 1408])
+{'eval_loss': 3.0765509605407715, 'eval_runtime': 82.0726, 'eval_samples_per_second': 0.061, 'eval_steps_per_second': 0.037, 'epoch': 1.0}
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([32, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([32, 1408])
+last_hidden_state modified shape: torch.Size([2, 4112, 1408])
+pooler_output modified shape: torch.Size([2, 16, 1408])
+ 67%|██████▋   | 2/3 [06:24<03:31, 211.41s/it]
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([32, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([32, 1408])
+last_hidden_state modified shape: torch.Size([2, 4112, 1408])
+
+100%|██████████| 3/3 [06:33<00:00, 118.73s/it]
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([16, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([16, 1408])
+last_hidden_state modified shape: torch.Size([1, 4112, 1408])
+pooler_output modified shape: torch.Size([1, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([32, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([32, 1408])
+last_hidden_state modified shape: torch.Size([2, 4112, 1408])
+pooler_output modified shape: torch.Size([2, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([32, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([32, 1408])
+last_hidden_state modified shape: torch.Size([2, 4112, 1408])
+pooler_output modified shape: torch.Size([2, 16, 1408])
+ 67%|██████▋   | 2/3 [00:00<00:00,  4.83it/s]
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([16, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([16, 1408])
+last_hidden_state modified shape: torch.Size([1, 4112, 1408])
+pooler_output modified shape: torch.Size([1, 16, 1408])
+
+
+100%|██████████| 3/3 [09:59<00:00, 199.71s/it]
+{'train_runtime': 599.1258, 'train_samples_per_second': 0.025, 'train_steps_per_second': 0.005, 'train_loss': 1.4388923645019531, 'epoch': 2.0}
