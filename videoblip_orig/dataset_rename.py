@@ -53,7 +53,7 @@ class SegFileDataset(Dataset):
         
         with open(annots_path, "r") as f:
             self.annots = json.load(f)
-        self.annots=self.annots[:7]
+        #self.annots=self.annots
         
         self.processor=processor 
         self.num_query_tokens = num_query_tokens
@@ -152,6 +152,8 @@ class SegFileDataset(Dataset):
             seg_vid_prompt="Answer:"
             #all_noun=[]
             #all_verb=[]
+            ground_noun=[]
+            ground_verb=[]
             for count, seg_info in enumerate(forecast_seg_info_list):
                 # Repeat for the final ground-truth narration.
                 seg_gt_noun=seg_info["noun"].split("_")[0]
@@ -163,7 +165,8 @@ class SegFileDataset(Dataset):
 
                 
                 seg_vid_prompt=seg_vid_prompt + "\"{} {}\",".format(seg_gt_verb, seg_gt_noun)
-
+                ground_noun.append(seg_gt_noun)
+                ground_verb.append(seg_gt_verb)
 
             vid_prompt=seg_vid_prompt.strip(",")+"."
             ##print("vid_prompt",vid_prompt)
@@ -178,6 +181,8 @@ class SegFileDataset(Dataset):
             out_dict["seg_file"]=name
             out_dict["ground_truth"]=vid_prompt
             out_dict['prompt'] = PROMPTS[0]
+            out_dict["ground_noun"]=ground_noun
+            out_dict["ground_verb"]=ground_verb
 
                       
         return out_dict

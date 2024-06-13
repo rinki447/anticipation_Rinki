@@ -1,3 +1,5 @@
+import numpy as np
+import editdistance
 import argparse, os
 import pickle, json
 from transformers import Blip2Processor
@@ -14,18 +16,54 @@ from torch.utils.data import DataLoader
 import re
 
 PROMPTS = [
-    "What are the next 20 future actions that the camera wearer is going to do?",
-    "Question: What are the next 20 future actions that the camera wearer is going to do?",
-    "What are the next 20 future actions that the camera wearer is going to do? An answer to the question is",
-    "Q: What are the next 20 future actions that the camera wearer is going to do? A:",
-    "Given the video frames, answer the following question. What are the next 20 future actions that the camera wearer is going to do?",
-    "Based on the video frames, respond to this question: What are the next 20 future actions that the camera wearer is going to do? "
-    "Answer:",
-    "Use the provided video frames to answer the question: WWhat are the next 20 future actions that the camera wearer is going to do?",
-    'What is the answer to the following question? "What are the next 20 future actions that the camera wearer is going to do?"',
-    'The question "What are the next 20 future actions that the camera wearer is going to do?" can be answered using the video frames. '
-    "The answer is",
+	"What are the next 20 future actions that the camera wearer is going to do?",
+	"Question: What are the next 20 future actions that the camera wearer is going to do?",
+	"What are the next 20 future actions that the camera wearer is going to do? An answer to the question is",
+	"Q: What are the next 20 future actions that the camera wearer is going to do? A:",
+	"Given the video frames, answer the following question. What are the next 20 future actions that the camera wearer is going to do?",
+	"Based on the video frames, respond to this question: What are the next 20 future actions that the camera wearer is going to do? "
+	"Answer:",
+	"Use the provided video frames to answer the question: WWhat are the next 20 future actions that the camera wearer is going to do?",
+	'What is the answer to the following question? "What are the next 20 future actions that the camera wearer is going to do?"',
+	'The question "What are the next 20 future actions that the camera wearer is going to do?" can be answered using the video frames. '
+	"The answer is",
 ]
+
+def edit_distance(preds, labels):
+    N, _, K = preds.shape  # Assuming preds has shape (N, ..., K)
+    #Z = ...  # Define Z based on your logic
+    Z=20
+    min_distances = []
+    for n in range(N):
+        distances = []
+        for k in range(K):
+            pred_list = preds[n, :, k].tolist()  # Convert numpy array to list
+            #label_list = labels[n].tolist()  # Convert numpy array to list
+            print("pred_list: ",pred_list)
+            print("label list: ",labels[n])
+            distances.append(editdistance.eval(pred_list, labels[n]) / Z)
+            print("distance",distances)
+        min_distances.append(min(distances))
+    
+    return np.mean(min_distances)
+
+'''def edit_distance(preds, labels):
+	"""
+	Damerau–Levenshtein edit distance from: https://github.com/gfairchild/pyxDamerauLevenshtein
+	Lowest among K predictions
+	"""
+	N, Z, K = preds.shape
+	dists = []
+	for n in range(N):
+		print("labels[n]",labels[n])
+		print("labels[n] shape",labels[n].shape)
+		print("preds[n, :, 0]",preds[n,:,0])
+		print("preds[n, :, 0] shape",preds[n,:,0].shape)
+		
+
+		dist = min([editdistance.eval(preds[n, :, k].tolist(),labels[n].tolist())/Z for k in range(K)])
+		dists.append(dist)
+	return np.mean(dists)'''
 
 def extract_synonyms(part_of_speech):
 	word = ""
@@ -46,6 +84,26 @@ def extract_synonyms(part_of_speech):
 		synonyms.append(word)
 
 	return list(set(synonyms))
+
+def noun_verb(sent_k):
+	
+	verb=[]
+	noun=[]
+	# Use regular expression to find all instances of text within double quotes 
+
+	word_pairs = re.findall(r'"(.*?)"', sent_k) 
+
+	# Print the list of word pairs 
+	length_sent=len(word_pairs)
+
+	while length_sent<20:
+		word_pairs.append('No No')  
+		length_sent=len(word_pairs)
+
+	for word in word_pairs:
+		verb.append(word.split(" ")[0].strip())
+		noun.append(word.split(" ")[1].strip())
+	return noun,verb
 
 '''def extract_verb_noun(
 		generated_text:str
@@ -98,20 +156,24 @@ def generate(
 	seg_file_generated_text = {}
 
 	num_val_samples = len(val_dataset)
+	print("num_val_samples:",num_val_samples)
+	
+	ed_final=0
+
 	for ind in tqdm(range(num_val_samples)):
 		sample = val_dataset.__getitem__(ind) # need to return short name for 2 observed files, in dict sample["seg_file"]
 		seg_file = sample['seg_file']
 
-		print("file_name",seg_file)
+		#print("file_name",seg_file)
 
 		prompt = sample['prompt']
 		# try:
 		#prompt = sample['prompt']
-		print("prompt",prompt)
+		#print("prompt",prompt)
 
 		save_path = save_dir + seg_file #path for the 2 obs clip data output to save
 
-		print("save path",save_path)
+		#print("save path",save_path)
 		if os.path.exists(save_path):
 			continue
 
@@ -120,12 +182,12 @@ def generate(
 		
 		# # (B, N_obs,F, H, W, C)
 		# # (1,2, 8, 1080, 1440, 3)
-		print("sample['frames'] shape:",sample['frames'].shape)
+		#print("sample['frames'] shape:",sample['frames'].shape)
 		frames = sample['frames'].unsqueeze(0)
 
 
 		batch,n_obs,channel,time,_,_=frames.shape
-		print("frames shape",frames.shape)#torch.Size([1, 2, 3, 8, 224, 224])
+		#print("frames shape",frames.shape)#torch.Size([1, 2, 3, 8, 224, 224])
 		
 		#inputs={}
 		#inputs["pixel_values"]=frames
@@ -142,14 +204,14 @@ def generate(
 
 
 		'''inputs = processor(
-		    images=frames, 
-		    text=prompt.strip(), 
-		    return_tensors="pt"
+			images=frames, 
+			text=prompt.strip(), 
+			return_tensors="pt"
 		)
 		_,_,_, height, weight = inputs.pixel_values.size()
 		inputs["pixel_values"] = inputs.pixel_values.view(
-		            batch, n_obs, time, channel, height, weight
-		        ).permute(0, 1,3, 2, 4, 5)'''
+					batch, n_obs, time, channel, height, weight
+				).permute(0, 1,3, 2, 4, 5)'''
 
 		
 
@@ -167,10 +229,10 @@ def generate(
 		inputs["pixel_values"]=pixels
 
 		tokenized_inputs = generate_input_ids(
-		        tokenizer=processor.tokenizer,
-		        prompt=PROMPTS[0],
-		        decoder_only_lm=True
-		        )
+				tokenizer=processor.tokenizer,
+				prompt=PROMPTS[0],
+				decoder_only_lm=True
+				)
 		
 		
 		inputs["input_ids"]=tokenized_inputs["input_ids"].unsqueeze(0).to(model.device)
@@ -187,30 +249,75 @@ def generate(
 				do_sample=True,
 				)
 
-			print("generated id shape:",generated_ids.shape)
+			#print("generated id shape:",generated_ids.shape)
 		
 			generated_text = processor.batch_decode(
 				generated_ids, 
 				skip_special_tokens=True
 				)
-			print("generated text",generated_text)
+			#print("generated text",generated_text)
 			
-			
-		print("ground truth",sample["ground_truth"])
+		
+		K_value=len(generated_text)	
+		#print("ground truth",sample["ground_truth"])
 		#seg_file_generated_text[seg_file].append(generated_text)
 			
 				#pred_verb, pred_noun = extract_verb_noun(generated_text)
-		ed_final=0
-		for pred_sentence in generated_text:
-				#for synonym_sentence in ground_sentence:
-				ground_sentence=sample["ground_truth"]
-				ed=edit_distance(pred_sentence,ground_sentence)
-				if ed>ed_final:
-					ed_final=ed
-					best_sentence=pred_sentence
+		pred_noun=np.array([])
+		pred_verb=np.array([])
 
-		print(best_sentence)   
-		exit()
+		for k in range(K_value):
+
+			sent_k=generated_text[k]
+			noun_k,verb_k=noun_verb(sent_k)
+
+			#print("noun_k:",noun_k)
+			#print("verb k:",verb_k)
+			
+			noun_k=np.array(noun_k).reshape(20,1)
+			verb_k=np.array(verb_k).reshape(20,1)
+
+			if k==0:
+				pred_noun=noun_k
+				pred_verb=verb_k
+			else:
+				pred_noun=np.hstack((pred_noun,noun_k))
+				pred_verb=np.hstack((pred_verb,verb_k))
+
+
+		#print("pred noun:",pred_noun)
+		#print("pred verb:",pred_verb)
+		
+		pred=[]
+		#pred=np.hstack((pred,pred_noun))
+		pred.append(list(pred_noun))
+		pred.append(list(pred_verb))
+		pred=np.array(pred)
+
+		print("pred:",pred)
+		
+
+		ground_noun=sample["ground_noun"]
+		ground_verb=sample["ground_verb"]
+		#print("ground_noun",ground_noun)
+		#print("ground_verb",ground_verb)
+
+		ground_truth=[]
+		#ground_truth=np.hstack((ground_truth,ground_noun))
+		ground_truth.append(ground_noun)
+		ground_truth.append(ground_verb)
+		
+
+		
+
+		#print("pred array: ",pred_array)
+		print("ground array",ground_truth)
+		
+		ed=edit_distance(pred,ground_truth)
+				
+
+		
+		
 
 			
 
@@ -223,21 +330,30 @@ def generate(
 
 		torch.cuda.empty_cache()
 
-		with open(save_dir + seg_file, "wb") as f:
-				pickle.dump(generated_text, f, pickle.HIGHEST_PROTOCOL)
+		#with open(save_dir + seg_file, "wb") as f:
+				#pickle.dump(generated_text, f, pickle.HIGHEST_PROTOCOL)##############
 
 			# print(f"Generated_text: {generated_text}")
 		# except:
 		#     print("Problem with {}".format(seg_file))
 		#     continue
 
+		ed_final=ed_final+ed
+
+		if not ind==0:
+			ed_till_now=ed_final/ind
+		else:
+			ed_till_now=ed_final
+		print("ed for epoch i: ",ed_till_now,ind)
+
 	'''verb_acc = verb_cnt/num_val_samples*100
 	noun_acc = noun_cnt/num_val_samples*100
 	act_acc = act_cnt/num_val_samples*100
 	print("Verb accuracy: {}, Noun accuracy: {}, Action acuracy: {}".format(verb_acc, noun_acc, act_acc))'''
 
-	with open(save_dir + "seg_file_gen_text.pkl", "wb") as f:
-		pickle.dump(seg_file_generated_text, f, pickle.HIGHEST_PROTOCOL)
+	#with open(save_dir + "seg_file_gen_text.pkl", "wb") as f:
+		#pickle.dump(seg_file_generated_text, f, pickle.HIGHEST_PROTOCOL)
+	print("final ed:",ed_till_now)
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(

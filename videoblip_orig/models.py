@@ -501,6 +501,9 @@ class Blip2ForConditionalGeneration(Blip2PreTrainedModel):
             inputs_embeds.to(language_model_inputs.device)
         ], dim=1)
 
+        language_model_device = next(self.language_model.parameters()).device
+        print("language_model_device ",language_model_device)
+        inputs_embeds=inputs_embeds.to(language_model_device)
         # add image_embeds length to max_length, so that the final max_length in counted only on token embeds
         # -1 is to account for the prepended BOS after `generate.`
         # TODO (joao, raushan): refactor `generate` to avoid these operations with VLMs
@@ -510,6 +513,16 @@ class Blip2ForConditionalGeneration(Blip2PreTrainedModel):
         
         # (B, num_gen_tokens)
         # eg. (1, 46)
+        attention_mask=attention_mask.to(language_model_device)
+
+        for key, value in generate_kwargs.items():
+
+            if isinstance(value, torch.Tensor):
+                print("value")
+                generate_kwargs[key] = value.to(language_model_device)
+        #print("input embed device:",inputs_embeds.device)
+
+        #print("generate_kwargs device:",generate_kwargs.device)
         outputs = self.language_model.generate(
             inputs_embeds=inputs_embeds,
             attention_mask=attention_mask,
@@ -519,7 +532,7 @@ class Blip2ForConditionalGeneration(Blip2PreTrainedModel):
 
         no_seq=outputs.shape[0]
 
-        print("outputs shape",outputs.shape)
+        #print("outputs shape",outputs.shape)
 
         # this is a temporary workaround to be consistent with other generation models and
         # have BOS as the first token, even though under the hood we are calling LM with embeds
@@ -530,7 +543,7 @@ class Blip2ForConditionalGeneration(Blip2PreTrainedModel):
                 .to(image_embeds.device)
             )
 
-            print("bos token shape:",bos_tokens.shape)
+            #print("bos token shape:",bos_tokens.shape)
             if not isinstance(outputs, torch.Tensor):
                 outputs.sequences = torch.cat([bos_tokens, outputs.sequences], dim=-1)
             else:
