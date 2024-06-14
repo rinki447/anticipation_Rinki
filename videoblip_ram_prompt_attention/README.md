@@ -1,6 +1,6 @@
 **For Shao Yuan: At least 3 GPU required
 
-You may face the same errors you faced running last model. So i have compressed "python3 train_videoblip_rinki.py --*** " line by removing spaces, yet there can be spaces, which you might need to remove to avoid argument error in your system.
+You may face the same errors you faced running last model. So i have compressed "python3 train_videoblip_rinki.py --*** " line by removing spaces inside "slurm_scripts/train_videoblip_no_slurm.sh", yet there can be spaces, which you might need to remove to avoid argument error in your system.
 
 Also, last time, you had an error of extra "r" at the end of the annotation file, so you had to add 
 f=f.strip() kind of line after **[with open(xyz,"r) as f:]** in dataset.py. Similarly here if you face the same issue, you can add similar line under dataset_rinki.py
