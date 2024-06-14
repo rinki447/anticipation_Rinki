@@ -46,6 +46,8 @@ forecast_annot_te_dir="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipa
 
 7>  OUT_Dir="" , change this path to your chosen folder, to save checkpoints of the model
 
+8> change the line "conda activate llava" into "conda activate eilev" assuming eilev is your environment
+
 
 
 
