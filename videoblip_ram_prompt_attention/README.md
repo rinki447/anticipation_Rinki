@@ -3,7 +3,9 @@
 You may face the same errors you faced running last model. So i have compressed "python3 train_videoblip_rinki.py --*** " line by removing spaces, yet there can be spaces, which you might need to remove to avoid argument error in your system.
 
 Also, last time, you had an error of extra "r" at the end of the annotation file, so you had to add 
-f=f.strip() kind of line after **with open(xyz,"r) as f:** in dataset.py. Similarly here if you face the same issue, you can add similar line under dataset_rinki.py
+f=f.strip() kind of line after **[with open(xyz,"r) as f:]** in dataset.py. Similarly here if you face the same issue, you can add similar line under dataset_rinki.py
+
+
 
 > Save EGo4D clips in "folder_clips" 
 
@@ -13,6 +15,9 @@ f=f.strip() kind of line after **with open(xyz,"r) as f:** in dataset.py. Simila
 > Save Annotations under "your_annot_folder" from https://drive.google.com/drive/folders/1G2_Ow6TjgCoBgevBtUNKWdPDzLM6R9Jx?usp=sharing
 
 >>  eg: for me the folder path is "/data/AmitRoyChowdhury/ego4d_data/v2/annotations/"
+
+
+
 
 
 
@@ -40,6 +45,9 @@ forecast_annot_te_dir="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipa
 6>  SAVE_DIR="" , change the path to your chosen path, to save results
 
 7>  OUT_Dir="" , change this path to your chosen folder, to save checkpoints of the model
+
+
+
 
 > To run the code I used:
 bash slurm_scripts/train_videoblip_rinki.sh
