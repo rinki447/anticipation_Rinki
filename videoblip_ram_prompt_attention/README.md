@@ -22,7 +22,7 @@ f=f.strip() kind of line after **[with open(xyz,"r) as f:]** in dataset.py. Simi
 
 
 
-> Inside slurm/train_videoblip_rinki.sh, replace the paths:
+> Inside slurm_scripts/train_videoblip_no_slurm.sh, replace the paths:
 
 1> RAM_TAGS_PATH="folder_name" with your "folder_tags"
 
@@ -50,7 +50,7 @@ forecast_annot_te_dir="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipa
 
 
 > To run the code I used:
-bash slurm_scripts/train_videoblip_rinki.sh
+bash slurm_scripts/train_videoblip_no_slurm.sh
 
 
 ####################################################################################################################################################################################
