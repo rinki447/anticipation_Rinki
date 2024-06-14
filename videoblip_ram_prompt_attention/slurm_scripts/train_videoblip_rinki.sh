@@ -35,7 +35,7 @@ NUM_WORKERS=8
 # MODEL_NAME_OR_PATH="Salesforce/blip2-opt-2.7b"
 PROCESSOR_PATH="Salesforce/blip2-opt-2.7b"
 MODEL_NAME_OR_PATH="Salesforce/blip2-opt-2.7b" #"videoblip_output/checkpoint-999/"
-OUTPUT_DIR="/data/AmitRoyChowdhury/Rinki/videoblip_output/" ############# changed by rinki
+OUTPUT_DIR="/data/AmitRoyChowdhury/Rinki/videoblip_ram_output/" ############# changed by rinki
 TRAIN_BATCH_SIZE=16
 
 export MASTER_NODE=$(expr 10000 + $(echo -n $SLURM_JOBID | tail -c 4))
@@ -59,32 +59,7 @@ conda activate llava ###########################################################
 #     --rdzv-endpoint=$MASTER_NODE \
 
 # torchrun --nproc_per_node=4 main.py  \
-python3 main_rinki.py \
-    --n_present_video ${n_present_video} \
-    --n_future_video ${n_future_video} \
-    --no_frame ${no_frame} \
-    --forecast_annot_tr_dir ${forecast_annot_tr_dir} \
-    --forecast_annot_te_dir ${forecast_annot_te_dir} \
-    --vids_dir ${VIDS_DIR} \
-    --model_name_or_path ${MODEL_NAME_OR_PATH} \
-    --processor_path ${PROCESSOR_PATH} \
-    --ram_tags_path ${RAM_TAGS_PATH} \
-    --lta_annots_dir ${LTA_ANNOTS_DIR} \
-    --output_dir ${OUTPUT_DIR} \
-    --save_dir ${SAVE_DIR} \
-    --num_train_epochs ${NUM_TRAIN_EPOCHS} \
-    --warmup_steps 1000 \
-    --learning_rate 1e-5 \
-    --per_device_train_batch_size 16 \
-    --gradient_accumulation_steps 4 \
-    --ddp_find_unused_parameters False \
-    --per_device_eval_batch_size 16 \
-    --weight_decay 0.05 \
-    --dataloader_num_workers ${NUM_WORKERS} \
-    --bf16 True \
-    --evaluation_strategy epoch \
-    --eval_steps 200 \
-    --save_strategy epoch \
-    --save_steps 200 \
-    --save_total_limit 3 \
-    --logging_steps 10    
+python3 main_rinki.py --n_present_video ${n_present_video} --n_future_video ${n_future_video} --no_frame ${no_frame} --forecast_annot_tr_dir ${forecast_annot_tr_dir} --forecast_annot_te_dir ${forecast_annot_te_dir} --vids_dir ${VIDS_DIR} \
+    --model_name_or_path ${MODEL_NAME_OR_PATH} --processor_path ${PROCESSOR_PATH} --ram_tags_path ${RAM_TAGS_PATH} \
+    --lta_annots_dir ${LTA_ANNOTS_DIR} --output_dir ${OUTPUT_DIR} --save_dir ${SAVE_DIR} --num_train_epochs ${NUM_TRAIN_EPOCHS} --warmup_steps 1000 \
+    --learning_rate 1e-5 --per_device_train_batch_size 16 --gradient_accumulation_steps 4 --ddp_find_unused_parameters False --per_device_eval_batch_size 16 --weight_decay 0.05 --dataloader_num_workers ${NUM_WORKERS} --bf16 True --evaluation_strategy epoch --eval_steps 200 --save_strategy epoch --save_steps 200 --save_total_limit 5 --logging_steps 10    

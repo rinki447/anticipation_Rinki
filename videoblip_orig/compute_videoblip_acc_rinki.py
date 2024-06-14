@@ -94,15 +94,30 @@ def noun_verb(sent_k):
 	word_pairs = re.findall(r'"(.*?)"', sent_k) 
 
 	# Print the list of word pairs 
-	length_sent=len(word_pairs)
-
-	while length_sent<20:
-		word_pairs.append('No No')  
-		length_sent=len(word_pairs)
-
+	
 	for word in word_pairs:
 		verb.append(word.split(" ")[0].strip())
 		noun.append(word.split(" ")[1].strip())
+	
+
+	length_noun=len(noun)
+
+	while length_noun<20:
+		noun.append('No') 
+		length_noun=len(noun) 
+	if length_noun>20:
+		noun=noun[0:20]
+
+
+
+	length_verb=len(verb)
+
+	while length_verb<20:
+		verb.append('No') 
+		length_verb=len(verb) 
+	if length_verb>20:
+		verb=verb[0:20]
+
 	return noun,verb
 
 '''def extract_verb_noun(
@@ -157,7 +172,7 @@ def generate(
 
 	num_val_samples = len(val_dataset)
 	print("num_val_samples:",num_val_samples)
-	
+
 	ed_final=0
 
 	for ind in tqdm(range(num_val_samples)):

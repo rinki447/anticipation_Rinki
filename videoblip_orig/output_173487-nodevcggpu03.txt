@@ -1,64 +1,0 @@
-/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_functional_video.py:6: UserWarning: The 'torchvision.transforms._functional_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms.functional' module instead.
-  warnings.warn(
-/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torchvision/transforms/_transforms_video.py:22: UserWarning: The 'torchvision.transforms._transforms_video' module is deprecated since 0.12 and will be removed in the future. Please use the 'torchvision.transforms' module instead.
-  warnings.warn(
-[2024-06-13 02:43:58,808] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:05,  1.75s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:03<00:03,  1.68s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:04<00:01,  1.60s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:05<00:00,  1.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:05<00:00,  1.25s/it]
-num_val_samples: 19348
-  0%|          | 0/19348 [00:00<?, ?it/s]/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/dataset_rename.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
-  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
-Both `max_new_tokens` (=128) and `max_length`(=51) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
-  0%|          | 0/19348 [00:08<?, ?it/s]
-output_attentions: None
-output_hidden_states: None
-vision_outputs.last_hidden_state shape: torch.Size([16, 257, 1408])
-vision_outputs.pooler_output shape: torch.Size([16, 1408])
-last_hidden_state modified shape: torch.Size([1, 4112, 1408])
-pooler_output modified shape: torch.Size([1, 16, 1408])
-language_model_device  cuda:0
-Traceback (most recent call last):
-  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/compute_videoblip_acc_rinki.py", line 411, in <module>
-    generate(
-  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/compute_videoblip_acc_rinki.py", line 242, in generate
-    generated_ids = model.generate(
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
-    return func(*args, **kwargs)
-  File "/home/eegrad/rghosal/anticipation_Rinki/videoblip_orig/models.py", line 526, in generate
-    outputs = self.language_model.generate(
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
-    return func(*args, **kwargs)
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/generation/utils.py", line 1595, in generate
-    return self.beam_sample(
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/generation/utils.py", line 3276, in beam_sample
-    outputs = self(
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/models/opt/modeling_opt.py", line 1145, in forward
-    outputs = self.model.decoder(
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/models/opt/modeling_opt.py", line 911, in forward
-    layer_outputs = decoder_layer(
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
-    output = old_forward(*args, **kwargs)
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/transformers/models/opt/modeling_opt.py", line 549, in forward
-    hidden_states = self.self_attn_layer_norm(hidden_states)
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/accelerate/hooks.py", line 165, in new_forward
-    output = old_forward(*args, **kwargs)
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/modules/normalization.py", line 196, in forward
-    return F.layer_norm(
-  File "/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/nn/functional.py", line 2543, in layer_norm
-    return torch.layer_norm(input, normalized_shape, weight, bias, eps, torch.backends.cudnn.enabled)
-RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:1 and cuda:0! (when checking argument for argument weight in method wrapper_CUDA__native_layer_norm)
