@@ -1,0 +1,203 @@
+
+Length of training dataset:37947
+Length of validation dataset:19348
+
+Loading checkpoint shards:  50%|█████     | 1/2 [00:38<00:38, 38.91s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:57<00:00, 29.00s/it]
+Some weights of VideoBlipForConditionalGeneration were not initialized from the model checkpoint at Salesforce/blip2-opt-2.7b and are newly initialized: ['multihead_attn.out_proj.bias', 'multihead_attn.out_proj.weight', 'multihead_attn.qkv_proj.bias', 'multihead_attn.qkv_proj.weight', 'text_proj.bias', 'text_proj.weight', 'vis_proj.bias', 'vis_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+  0%|          | 0/2965 [00:00<?, ?it/s]
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+
+  0%|          | 1/2965 [12:27<615:04:11, 747.05s/it]
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+
+  0%|          | 2/2965 [17:50<409:53:02, 498.00s/it]
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+
+  0%|          | 3/2965 [19:17<255:21:44, 310.37s/it]
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+
+  0%|          | 4/2965 [26:27<293:57:29, 357.40s/it]
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+
+  0%|          | 5/2965 [26:55<196:15:37, 238.70s/it]
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+
+  0%|          | 6/2965 [33:46<244:20:57, 297.28s/it]
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+
+  0%|          | 7/2965 [35:05<185:37:22, 225.91s/it]
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])
+pooler_output modified shape: torch.Size([16, 16, 1408])
+output_attentions: None
+output_hidden_states: None
+vision_outputs.last_hidden_state shape: torch.Size([256, 257, 1408])
+vision_outputs.pooler_output shape: torch.Size([256, 1408])
+last_hidden_state modified shape: torch.Size([16, 4112, 1408])

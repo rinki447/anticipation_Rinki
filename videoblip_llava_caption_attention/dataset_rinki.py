@@ -41,7 +41,7 @@ class SegFileDataset(Dataset):
 		
 		with open(annots_path, "r") as f:
 			self.annots = json.load(f)
-		self.annots=self.annots
+		#self.annots=self.annots
 		self.ram_tags_path=ram_tags_path
 		self.processor=processor 
 		self.num_query_tokens = num_query_tokens

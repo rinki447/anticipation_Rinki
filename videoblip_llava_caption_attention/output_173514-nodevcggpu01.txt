@@ -1,0 +1,47 @@
+/var/spool/slurmd/job173514/slurm_script: line 42: 1 * : syntax error: operand expected (error token is "* ")
+MASTER_NODE=13514
+WORLD_SIZE=
+MASTER_ADDR=nodevcggpu01
+[2024-06-13 19:07:18,453] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+wandb: Currently logged in as: rghos014 (rghos014ucr). Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.17.1 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.6
+wandb: Run data is saved locally in /home/eegrad/rghosal/anticipation_Rinki/videoblip_ram_prompt_attention/wandb/run-20240613_190721-fwku96d8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run wandering-serenity-35
+wandb: ⭐️ View project at https://wandb.ai/rghos014ucr/VideoBLIP_Qformer_RAM_Attention
+wandb: 🚀 View run at https://wandb.ai/rghos014ucr/VideoBLIP_Qformer_RAM_Attention/runs/fwku96d8
+Length of training dataset:37947
+Length of validation dataset:19348
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:38<00:38, 38.91s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:57<00:00, 27.25s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:57<00:00, 29.00s/it]
+Some weights of VideoBlipForConditionalGeneration were not initialized from the model checkpoint at Salesforce/blip2-opt-2.7b and are newly initialized: ['multihead_attn.out_proj.bias', 'multihead_attn.out_proj.weight', 'multihead_attn.qkv_proj.bias', 'multihead_attn.qkv_proj.weight', 'text_proj.bias', 'text_proj.weight', 'vis_proj.bias', 'vis_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/eegrad/rghosal/anaconda3/envs/llava/lib/python3.10/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+Total number of trainable parameters:117592320
+  0%|          | 0/2965 [00:00<?, ?it/s][2024-06-13 19:08:59,958] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-06-13 19:09:11,077] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-06-13 19:09:21,031] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-06-13 19:09:31,381] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-06-13 19:09:41,030] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-06-13 19:09:50,896] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-06-13 19:10:01,121] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-06-13 19:10:10,919] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/eegrad/rghosal/anticipation_Rinki/videoblip_ram_prompt_attention/dataset_rinki.py:130: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/anticipation_Rinki/videoblip_ram_prompt_attention/dataset_rinki.py:130: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/anticipation_Rinki/videoblip_ram_prompt_attention/dataset_rinki.py:130: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/anticipation_Rinki/videoblip_ram_prompt_attention/dataset_rinki.py:130: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/anticipation_Rinki/videoblip_ram_prompt_attention/dataset_rinki.py:130: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/anticipation_Rinki/videoblip_ram_prompt_attention/dataset_rinki.py:130: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/anticipation_Rinki/videoblip_ram_prompt_attention/dataset_rinki.py:130: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+/home/eegrad/rghosal/anticipation_Rinki/videoblip_ram_prompt_attention/dataset_rinki.py:130: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  preproc_seg_frame = torch.tensor(preproc_seg_frame).clone().detach()
+  0%|          | 1/2965 [12:27<615:04:11, 747.05s/it]  0%|          | 2/2965 [17:50<409:53:02, 498.00s/it]  0%|          | 3/2965 [19:17<255:21:44, 310.37s/it]  0%|          | 4/2965 [26:27<293:57:29, 357.40s/it]  0%|          | 5/2965 [26:55<196:15:37, 238.70s/it]  0%|          | 6/2965 [33:46<244:20:57, 297.28s/it]  0%|          | 7/2965 [35:05<185:37:22, 225.91s/it]slurmstepd: error: *** JOB 173514 ON nodevcggpu01 CANCELLED AT 2024-06-13T19:45:38 ***

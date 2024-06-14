@@ -1,5 +1,12 @@
 **For Shao Yuan: At least 3 GPU required
 
+You may face the same errors you faced running last model. So i have compressed "python3 train_videoblip_rinki.py --*** " line by removing spaces inside "slurm_scripts/train_videoblip_no_slurm.sh", yet there can be spaces, which you might need to remove to avoid argument error in your system.
+
+Also, last time, you had an error of extra "r" at the end of the annotation file, so you had to add 
+f=f.strip() kind of line after **[with open(xyz,"r) as f:]** in dataset.py. Similarly here if you face the same issue, you can add similar line under dataset_rinki.py
+
+
+
 > Save EGo4D clips in "folder_clips" 
 
 > Save Ram-Tags in "folder_tags" from https://drive.google.com/file/d/1bPdlewf9ICRHOuW3qK14BdUZgPuDGWMi/view?usp=sharing
@@ -12,32 +19,38 @@
 
 
 
-> Inside slurm/train_videoblip_rinki.sh, replace the paths:
 
-1> line 31, RAM_TAGS_PATH="folder_name" with your "folder_tags"
 
-2> line 29, VIDS_DIR="folder_name" with your "folder_clips"
 
-3> line 30, replace LTA_ANNOTS_DIR="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/" with "your_annots_folder" path
+> Inside slurm_scripts/train_videoblip_no_slurm.sh, replace the paths:
 
-4> line 16 and 17:
+1> RAM_TAGS_PATH="folder_name" with your "folder_tags"
+
+2> VIDS_DIR="folder_name" with your "folder_clips"
+
+3> LTA_ANNOTS_DIR="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/" with "your_annots_folder" path
+
+4>
 
 ego4d_annot_path_train="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/fho_lta_train.json"  =  your_annots_folder+"fho_lta_train.json"
 
 ego4d_annot_path_test="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/fho_lta_val.json"  =  your_annots_folder+"fho_lta_val.json"
 
-5> line 19, 20:
+5> 
 
 forecast_annot_tr_dir="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipation_final_train_annots.json"  =  your_annots_folder path +"anticipation_final_train_annots.json"
 
 forecast_annot_te_dir="/data/AmitRoyChowdhury/ego4d_data/v2/annotations/anticipation_final_test_annots.json" =  your_annots_folder path +"anticipation_final_test_annots.json"
 
-6> line 32: SAVE_DIR="" , change the path to your chosen path, to save results
+6>  SAVE_DIR="" , change the path to your chosen path, to save results
 
-7> line 38: OUT_Dir="" , change this path to your chosen folder, to save checkpoints of the model
+7>  OUT_Dir="" , change this path to your chosen folder, to save checkpoints of the model
+
+
+
 
 > To run the code I used:
-sbatch -p vcggpu --gres=gpu:4 --mem=30g --time=07-00:01:00 slurm_scripts/train_videoblip_rinki.sh
+bash slurm_scripts/train_videoblip_no_slurm.sh
 
 
 ####################################################################################################################################################################################
