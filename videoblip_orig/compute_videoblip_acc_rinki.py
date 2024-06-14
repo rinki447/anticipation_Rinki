@@ -45,7 +45,7 @@ def edit_distance(preds, labels):
             print("distance",distances)
         min_distances.append(min(distances))
     
-    return np.mean(min_distances)
+    return min_distances
 
 '''def edit_distance(preds, labels):
 	"""
@@ -173,7 +173,8 @@ def generate(
 	num_val_samples = len(val_dataset)
 	print("num_val_samples:",num_val_samples)
 
-	ed_final=0
+	ed_final_n=0
+	ed_final_v=0
 
 	for ind in tqdm(range(num_val_samples)):
 		sample = val_dataset.__getitem__(ind) # need to return short name for 2 observed files, in dict sample["seg_file"]
@@ -329,6 +330,8 @@ def generate(
 		print("ground array",ground_truth)
 		
 		ed=edit_distance(pred,ground_truth)
+		ed_n=ed[0]
+		ed_v=ed[1]
 				
 
 		
@@ -353,13 +356,16 @@ def generate(
 		#     print("Problem with {}".format(seg_file))
 		#     continue
 
-		ed_final=ed_final+ed
+		ed_final_n=ed_final_n+ed_n
+		ed_final_v=ed_final_v+ed_v
 
 		if not ind==0:
-			ed_till_now=ed_final/ind
+			ed_till_n=ed_final_n/ind
+			ed_till_v=ed_final_v/ind
 		else:
-			ed_till_now=ed_final
-		print("ed for epoch i: ",ed_till_now,ind)
+			ed_till_n=ed_final_n
+			ed_till_v=ed_final_v
+		print("ed for epoch i: ",ed_till_n,ed_till_v,ind)
 
 	'''verb_acc = verb_cnt/num_val_samples*100
 	noun_acc = noun_cnt/num_val_samples*100
@@ -368,7 +374,7 @@ def generate(
 
 	#with open(save_dir + "seg_file_gen_text.pkl", "wb") as f:
 		#pickle.dump(seg_file_generated_text, f, pickle.HIGHEST_PROTOCOL)
-	print("final ed:",ed_till_now)
+	print("final ed:",ed_till_n,ed_till_v,ed_final_n,ed_final_v,ind)
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(
